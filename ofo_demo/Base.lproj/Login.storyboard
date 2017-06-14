@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mz0-QV-E2s">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Video View Controller-->
+        <scene sceneID="Ar3-tw-WlF">
+            <objects>
+                <viewController id="mz0-QV-E2s" customClass="LoginVideoViewController" customModule="ofo_demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O6I-Y6-e9V"/>
+                        <viewControllerLayoutGuide type="bottom" id="NDz-L9-Yni"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZIK-Yz-FLw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTJ-Qs-x21">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <segue destination="ApQ-AU-MIz" kind="embed" id="Cpw-SX-xHO"/>
+                                </connections>
+                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="fJ1-53-vLn">
+                                <rect key="frame" x="52" y="369" width="216" height="126"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videologo" translatesAutoresizingMaskIntoConstraints="NO" id="W3c-MB-CjC">
+                                        <rect key="frame" x="52" y="0.0" width="112" height="57"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfe-xR-YKd">
+                                        <rect key="frame" x="0.0" y="85" width="216" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="ukT-VX-fwN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="注册/登录" backgroundImage="videologinButton">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gTJ-Qs-x21" secondAttribute="bottom" id="H5M-gU-oOi"/>
+                            <constraint firstItem="gTJ-Qs-x21" firstAttribute="leading" secondItem="ZIK-Yz-FLw" secondAttribute="leading" id="JP0-Mp-uz0"/>
+                            <constraint firstAttribute="trailing" secondItem="gTJ-Qs-x21" secondAttribute="trailing" id="Rpv-6w-YXY"/>
+                            <constraint firstAttribute="trailing" secondItem="fJ1-53-vLn" secondAttribute="trailing" constant="52" id="bSh-MY-GSR"/>
+                            <constraint firstAttribute="bottom" secondItem="fJ1-53-vLn" secondAttribute="bottom" constant="73" id="iU4-VJ-3Il"/>
+                            <constraint firstItem="gTJ-Qs-x21" firstAttribute="top" secondItem="ZIK-Yz-FLw" secondAttribute="top" id="nmt-JR-Cda"/>
+                            <constraint firstItem="fJ1-53-vLn" firstAttribute="leading" secondItem="ZIK-Yz-FLw" secondAttribute="leading" constant="52" id="xL2-A9-43W"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wzR-iQ-LY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="563" y="-581"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="i2p-9U-2LN">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="ApQ-AU-MIz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ll6-Hg-vEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1307" y="-582"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="videologinButton" width="254" height="48"/>
+        <image name="videologo" width="112" height="57"/>
+    </resources>
+</document>

@@ -9,18 +9,20 @@
 /* Begin PBXBuildFile section */
 		105FFDF85E26291565EFD73B /* Pods_ofo_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */; };
 		3EEC9FC81EF15DC000B0FC80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC9FC71EF15DC000B0FC80 /* AppDelegate.swift */; };
-		3EEC9FCA1EF15DC000B0FC80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC9FC91EF15DC000B0FC80 /* ViewController.swift */; };
-		3EEC9FCD1EF15DC000B0FC80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FCB1EF15DC000B0FC80 /* Main.storyboard */; };
+		3EEC9FCD1EF15DC000B0FC80 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FCB1EF15DC000B0FC80 /* Login.storyboard */; };
 		3EEC9FCF1EF15DC000B0FC80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FCE1EF15DC000B0FC80 /* Assets.xcassets */; };
+		3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */; };
+		3EEC9FDF1EF16B7C00B0FC80 /* LoginVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDE1EF16B7C00B0FC80 /* LoginVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3EEC9FC41EF15DC000B0FC80 /* ofo_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC9FC71EF15DC000B0FC80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3EEC9FC91EF15DC000B0FC80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3EEC9FCC1EF15DC000B0FC80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3EEC9FCC1EF15DC000B0FC80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		3EEC9FCE1EF15DC000B0FC80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EEC9FD31EF15DC000B0FC80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
+		3EEC9FDE1EF16B7C00B0FC80 /* LoginVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVideoViewController.swift; sourceTree = "<group>"; };
 		51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98AE5F6A2E3E5E6AA88B9CBE /* Pods-ofo_demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofo_demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ofo_demo/Pods-ofo_demo.release.xcconfig"; sourceTree = "<group>"; };
 		F6941B00A2144D6E1E138F0F /* Pods-ofo_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofo_demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ofo_demo/Pods-ofo_demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,13 +70,22 @@
 		3EEC9FC61EF15DC000B0FC80 /* ofo_demo */ = {
 			isa = PBXGroup;
 			children = (
+				3EEC9FDB1EF16B4100B0FC80 /* Resource */,
 				3EEC9FC71EF15DC000B0FC80 /* AppDelegate.swift */,
-				3EEC9FC91EF15DC000B0FC80 /* ViewController.swift */,
-				3EEC9FCB1EF15DC000B0FC80 /* Main.storyboard */,
+				3EEC9FDE1EF16B7C00B0FC80 /* LoginVideoViewController.swift */,
+				3EEC9FCB1EF15DC000B0FC80 /* Login.storyboard */,
 				3EEC9FCE1EF15DC000B0FC80 /* Assets.xcassets */,
 				3EEC9FD31EF15DC000B0FC80 /* Info.plist */,
 			);
 			path = ofo_demo;
+			sourceTree = "<group>";
+		};
+		3EEC9FDB1EF16B4100B0FC80 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		41ECABF7958FFF41EF554CC1 /* Frameworks */ = {
@@ -148,8 +159,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */,
 				3EEC9FCF1EF15DC000B0FC80 /* Assets.xcassets in Resources */,
-				3EEC9FCD1EF15DC000B0FC80 /* Main.storyboard in Resources */,
+				3EEC9FCD1EF15DC000B0FC80 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EEC9FCA1EF15DC000B0FC80 /* ViewController.swift in Sources */,
+				3EEC9FDF1EF16B7C00B0FC80 /* LoginVideoViewController.swift in Sources */,
 				3EEC9FC81EF15DC000B0FC80 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,12 +228,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3EEC9FCB1EF15DC000B0FC80 /* Main.storyboard */ = {
+		3EEC9FCB1EF15DC000B0FC80 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3EEC9FCC1EF15DC000B0FC80 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -371,6 +383,7 @@
 				3EEC9FD81EF15DC000B0FC80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
