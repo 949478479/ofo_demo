@@ -41,6 +41,9 @@
                                         <state key="normal" title="注册/登录" backgroundImage="videologinButton">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="actionButtonTapped" destination="mz0-QV-E2s" eventType="touchUpInside" id="PkO-It-9eS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

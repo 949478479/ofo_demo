@@ -65,3 +65,25 @@ extension LoginVideoViewController {
         NotificationCenter.default.removeObserver(self)
     }
 }
+
+// MARK: - 按钮点击
+extension LoginVideoViewController {
+    @IBAction func actionButtonTapped() {
+        switchRootViewController()
+    }
+}
+
+// MARK: - 切换控制器
+extension LoginVideoViewController {
+    func switchRootViewController() {
+        playerViewContrller.player?.pause()
+
+        let window = AppDelegate.shared.window!
+        let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController()!
+
+        window.rootViewController = homeVC
+        window.insertSubview(view, belowSubview: homeVC.view)
+
+        UIView.transition(from: view, to: homeVC.view, duration: 0.25, options: .transitionCrossDissolve)
+    }
+}
