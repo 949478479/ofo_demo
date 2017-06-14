@@ -22,6 +22,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Fr-8B-wbC">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Ysk-Ez-Cpf"/>
                         <barButtonItem key="leftBarButtonItem" image="user_center_icon" id="xnQ-L4-Kcg"/>
                         <barButtonItem key="rightBarButtonItem" image="gift_icon" id="OM1-Gs-zxG">
                             <connections>

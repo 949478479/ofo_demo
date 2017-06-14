@@ -15,6 +15,7 @@
 		3EFC930B1EF1976B00B4672A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EFC930A1EF1976B00B4672A /* Home.storyboard */; };
 		3EFC930D1EF198FA00B4672A /* Gift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EFC930C1EF198FA00B4672A /* Gift.storyboard */; };
 		3EFC930F1EF1A6B700B4672A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EFC930E1EF1A6B700B4672A /* Login.storyboard */; };
+		3EFC93111EF1A6D700B4672A /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC93101EF1A6D700B4672A /* GiftViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3EFC930A1EF1976B00B4672A /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3EFC930C1EF198FA00B4672A /* Gift.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Gift.storyboard; sourceTree = "<group>"; };
 		3EFC930E1EF1A6B700B4672A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3EFC93101EF1A6D700B4672A /* GiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98AE5F6A2E3E5E6AA88B9CBE /* Pods-ofo_demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofo_demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ofo_demo/Pods-ofo_demo.release.xcconfig"; sourceTree = "<group>"; };
 		F6941B00A2144D6E1E138F0F /* Pods-ofo_demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ofo_demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ofo_demo/Pods-ofo_demo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				3EFC930E1EF1A6B700B4672A /* Login.storyboard */,
 				3EFC930A1EF1976B00B4672A /* Home.storyboard */,
 				3EFC930C1EF198FA00B4672A /* Gift.storyboard */,
+				3EFC93101EF1A6D700B4672A /* GiftViewController.swift */,
 				3EEC9FCE1EF15DC000B0FC80 /* Assets.xcassets */,
 				3EEC9FD31EF15DC000B0FC80 /* Info.plist */,
 			);
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EEC9FDF1EF16B7C00B0FC80 /* LoginVideoViewController.swift in Sources */,
+				3EFC93111EF1A6D700B4672A /* GiftViewController.swift in Sources */,
 				3EEC9FC81EF15DC000B0FC80 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let shared = UIApplication.shared.delegate as! AppDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        configureAppearance()
         return true
     }
 
@@ -43,5 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+// MARK: - 设置外观
+extension AppDelegate {
+    func configureAppearance() {
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.backIndicatorImage = #imageLiteral(resourceName: "backIndicator")
+        navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "backIndicator")
+    }
 }
 
