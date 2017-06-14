@@ -1,0 +1,6 @@
+framework module Pods_ofo_demo {
+  umbrella header "Pods-ofo_demo-umbrella.h"
+
+  export *
+  module * { export * }
+}
