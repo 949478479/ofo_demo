@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     }
 }
 
-// MARK: 配置视图
+// MARK: - 配置视图
 extension HomeViewController {
     func configureNavigationBar() {
         let navigationBar = lx_navigationBar()

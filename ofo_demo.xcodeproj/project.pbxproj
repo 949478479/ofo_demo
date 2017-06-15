@@ -78,6 +78,7 @@
 		3E205AAE1EF2EE170021A966 /* LXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E205A711EF2EE170021A966 /* LXUtilities.m */; };
 		3E205AAF1EF2EE170021A966 /* LXUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E205A721EF2EE170021A966 /* LXUtilities.swift */; };
 		3E205AB11EF2EE4F0021A966 /* UIViewController+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E205AB01EF2EE4F0021A966 /* UIViewController+LXExtension.swift */; };
+		3E205AB41EF2F31B0021A966 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E205AB31EF2F31B0021A966 /* WebViewController.swift */; };
 		3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +210,7 @@
 		3E205A711EF2EE170021A966 /* LXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXUtilities.m; sourceTree = "<group>"; };
 		3E205A721EF2EE170021A966 /* LXUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXUtilities.swift; sourceTree = "<group>"; };
 		3E205AB01EF2EE4F0021A966 /* UIViewController+LXExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+LXExtension.swift"; sourceTree = "<group>"; };
+		3E205AB31EF2F31B0021A966 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3EEC9FC41EF15DC000B0FC80 /* ofo_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
 		51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +242,7 @@
 		3E20591F1EF2E9ED0021A966 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3E205AB21EF2F30E0021A966 /* Common */,
 				3E20592A1EF2E9ED0021A966 /* Other */,
 				3E2059271EF2E9ED0021A966 /* Login */,
 				3E2059201EF2E9ED0021A966 /* Gift */,
@@ -497,6 +500,14 @@
 			path = "UINavigationBar+LXAlphaChange";
 			sourceTree = "<group>";
 		};
+		3E205AB21EF2F30E0021A966 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3E205AB31EF2F31B0021A966 /* WebViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		3EEC9FBB1EF15DC000B0FC80 = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E205AAB1EF2EE170021A966 /* UIWebView+LXExtension.m in Sources */,
+				3E205AB41EF2F31B0021A966 /* WebViewController.swift in Sources */,
 				3E205A8A1EF2EE170021A966 /* NSURLRequest+LXExtension.m in Sources */,
 				3E205A961EF2EE170021A966 /* CGGeometry+LXExtension.swift in Sources */,
 				3E2059341EF2E9ED0021A966 /* LoginVideoViewController.swift in Sources */,

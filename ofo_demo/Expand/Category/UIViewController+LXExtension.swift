@@ -16,16 +16,17 @@ protocol DummyNavigationBar {
 extension DummyNavigationBar where Self: UIViewController {
 
     func configureDummyNavigationBar() {
-        let background = UIView()
-        view.addSubview(background)
-        background.snp.makeConstraints {
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = .white
+        view.addSubview(backgroundView)
+        backgroundView.snp.makeConstraints {
             $0.height.equalTo(64)
             $0.top.left.right.equalToSuperview()
         }
 
-        let shadow = UIImageView(image: #imageLiteral(resourceName: "shadow"))
-        view.addSubview(shadow)
-        shadow.snp.makeConstraints {
+        let shadowView = UIImageView(image: #imageLiteral(resourceName: "shadow"))
+        view.addSubview(shadowView)
+        shadowView.snp.makeConstraints {
             $0.left.right.equalToSuperview()
             $0.top.equalToSuperview().offset(64)
         }
