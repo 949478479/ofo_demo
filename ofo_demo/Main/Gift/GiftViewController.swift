@@ -10,25 +10,25 @@ import UIKit
 import WebKit
 import SnapKit
 
-class GiftViewController: UIViewController {
+class GiftViewController: UIViewController, DummyNavigationBar {
 
     let webView = WKWebView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configure(webView: webView)
+        configureDummyNavigationBar()
     }
 }
 
 // MARK: - 添加 WebView
 extension GiftViewController {
+    
     func configure(webView: WKWebView) {
         view.addSubview(webView)
-        webView.translatesAutoresizingMaskIntoConstraints = false
         webView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-
         let url = URL(string: "http://m.ofo.so/active.html")
         let request = URLRequest(url: url!)
         webView.load(request)

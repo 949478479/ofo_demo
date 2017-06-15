@@ -114,6 +114,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2Fr-8B-wbC">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="wkG-ms-Phw"/>
                         <view key="titleView" contentMode="scaleToFill" id="YkD-nx-jbv">
                             <rect key="frame" x="96" y="8.5" width="128" height="27"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

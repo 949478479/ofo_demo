@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--热门活动-->
+        <!--活动中心-->
         <scene sceneID="8yu-Hc-IKV">
             <objects>
                 <viewController id="dPA-vS-GcS" customClass="GiftViewController" customModule="ofo_demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,11 +21,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="热门活动" id="rkS-eu-6kg"/>
+                    <navigationItem key="navigationItem" title="活动中心" id="rkS-eu-6kg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iWo-j2-oMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436" y="-119"/>
+            <point key="canvasLocation" x="435" y="-119.36619718309859"/>
         </scene>
     </scenes>
 </document>
