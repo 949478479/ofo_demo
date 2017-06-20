@@ -17,6 +17,11 @@ class LoginVideoViewController: UIViewController {
     deinit {
         removePlayerObserver()
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        playerViewContrller.player?.play()
+    }
 }
 
 // MARK: - 状态栏
@@ -44,8 +49,7 @@ extension LoginVideoViewController {
             let player = AVPlayer(url: videoURL)
             playerViewContrller.player = player
             playerViewContrller.showsPlaybackControls = false
-            addPlayerObserver(for: player.currentItem!)
-            player.play()
+            addPlayerObserver(for: player)
         }
     }
 
@@ -54,11 +58,19 @@ extension LoginVideoViewController {
         playerViewContrller.player?.play()
     }
 
-    func addPlayerObserver(for playerItem: AVPlayerItem) {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(loopPlayVideo),
-                                               name: .AVPlayerItemDidPlayToEndTime,
-                                               object: playerItem)
+    func playVideo() {
+        playerViewContrller.player?.play()
+    }
+
+    func pauseVideo() {
+        playerViewContrller.player?.pause()
+    }
+
+    func addPlayerObserver(for player: AVPlayer) {
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(loopPlayVideo), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+        center.addObserver(self, selector: #selector(pauseVideo), name: .UIApplicationWillResignActive, object: nil)
+        center.addObserver(self, selector: #selector(playVideo), name: .UIApplicationDidBecomeActive, object: nil)
     }
 
     func removePlayerObserver() {
