@@ -8,19 +8,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, TranslucentNavigationBar {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
-    }
-}
-
-// MARK: - 配置视图
-extension HomeViewController {
-    func configureNavigationBar() {
-        let navigationBar = lx_navigationBar()
-        navigationBar?.shadowImage = UIImage()
-        navigationBar?.setBackgroundImage(UIImage(), for: .default)
+        setNavigationBarTranslucent()
     }
 }

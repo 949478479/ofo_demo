@@ -32,3 +32,15 @@ extension DummyNavigationBar where Self: UIViewController {
         }
     }
 }
+
+protocol TranslucentNavigationBar {
+    func setNavigationBarTranslucent()
+}
+
+extension TranslucentNavigationBar where Self: UIViewController {
+    func setNavigationBarTranslucent() {
+        let navigationBar = lx_navigationBar()
+        navigationBar?.shadowImage = UIImage()
+        navigationBar?.setBackgroundImage(UIImage(), for: .default)
+    }
+}
