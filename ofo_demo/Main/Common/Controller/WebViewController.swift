@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebViewController: UIViewController, DummyNavigationBar {
+class WebViewController: DummyNavigationBarViewController {
 
     fileprivate struct KVOContext {
         static var title = 0
@@ -26,7 +26,6 @@ class WebViewController: UIViewController, DummyNavigationBar {
         super.viewDidLoad()
         configure(webView: webView)
         configure(progressView: progressView)
-        configureDummyNavigationBar()
     }
 }
 
@@ -45,10 +44,11 @@ private extension WebViewController {
 
     func configure(progressView: UIProgressView) {
         progressView.progressTintColor = UIColor(hex: 0xFAE24C)
+		progressView.isHidden = true
         view.addSubview(progressView)
         progressView.snp.makeConstraints {
             $0.left.right.equalToSuperview()
-            $0.top.equalTo(topLayoutGuide.snp.bottom)
+            $0.top.equalTo(64)
         }
     }
 }
@@ -77,6 +77,10 @@ extension WebViewController {
 // MARK: - WKNavigationDelegate
 extension WebViewController: WKNavigationDelegate {
 
+	func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+		progressView.isHidden = false
+	}
+	
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
          progressView.isHidden = true
     }

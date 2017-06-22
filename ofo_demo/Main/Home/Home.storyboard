@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lZy-2x-6mt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lZy-2x-6mt">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,11 +32,22 @@
                                         <state key="normal" image="arrowup"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dq9-8B-vUz">
-                                        <rect key="frame" x="25" y="218" width="25" height="25"/>
+                                        <rect key="frame" x="11.5" y="207" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="c3S-Lk-baZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="ouJ-S3-irH"/>
+                                        </constraints>
                                         <state key="normal" image="user_center_icon"/>
+                                        <connections>
+                                            <segue destination="kIe-XU-KPw" kind="presentation" customClass="UserCenterSegue" customModule="ofo_demo" customModuleProvider="target" id="ITz-R2-nFQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RP1-ft-zLG">
-                                        <rect key="frame" x="270" y="218" width="25" height="25"/>
+                                        <rect key="frame" x="259" y="207" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Ng6-si-swN"/>
+                                            <constraint firstAttribute="height" constant="50" id="sTO-wo-GR3"/>
+                                        </constraints>
                                         <state key="normal" image="gift_icon"/>
                                         <connections>
                                             <segue destination="cat-hN-BXR" kind="show" id="r57-Qr-IhW"/>
@@ -76,12 +88,12 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="RP1-ft-zLG" secondAttribute="bottom" constant="20" id="8yn-BZ-r8J"/>
+                                    <constraint firstAttribute="bottom" secondItem="RP1-ft-zLG" secondAttribute="bottom" constant="6" id="8yn-BZ-r8J"/>
                                     <constraint firstItem="g1i-D7-Q4C" firstAttribute="top" secondItem="EeD-hf-K9q" secondAttribute="top" constant="8" id="PZA-fF-QQQ"/>
                                     <constraint firstAttribute="trailing" secondItem="YDK-e9-ZUC" secondAttribute="trailing" id="Tcm-q9-jqx"/>
-                                    <constraint firstAttribute="trailing" secondItem="RP1-ft-zLG" secondAttribute="trailing" constant="25" id="Vca-5b-oVK"/>
-                                    <constraint firstItem="Dq9-8B-vUz" firstAttribute="leading" secondItem="EeD-hf-K9q" secondAttribute="leading" constant="25" id="YrO-33-6Dm"/>
-                                    <constraint firstAttribute="bottom" secondItem="Dq9-8B-vUz" secondAttribute="bottom" constant="20" id="aRk-KS-pzf"/>
+                                    <constraint firstAttribute="trailing" secondItem="RP1-ft-zLG" secondAttribute="trailing" constant="11" id="Vca-5b-oVK"/>
+                                    <constraint firstItem="Dq9-8B-vUz" firstAttribute="leading" secondItem="EeD-hf-K9q" secondAttribute="leading" constant="11" id="YrO-33-6Dm"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dq9-8B-vUz" secondAttribute="bottom" constant="6" id="aRk-KS-pzf"/>
                                     <constraint firstItem="Gi7-V6-q0J" firstAttribute="centerY" secondItem="EeD-hf-K9q" secondAttribute="centerY" id="fzy-HT-JC1"/>
                                     <constraint firstItem="Gi7-V6-q0J" firstAttribute="centerX" secondItem="EeD-hf-K9q" secondAttribute="centerX" id="hvk-jU-9Tu"/>
                                     <constraint firstItem="g1i-D7-Q4C" firstAttribute="centerX" secondItem="EeD-hf-K9q" secondAttribute="centerX" id="r1I-YU-woS"/>
@@ -175,6 +187,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kbd-vH-7hz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-210" y="6.3380281690140849"/>
+        </scene>
+        <!--User-->
+        <scene sceneID="Ffg-T6-a8U">
+            <objects>
+                <viewControllerPlaceholder storyboardName="User" id="kIe-XU-KPw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T8e-XE-arD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="457"/>
         </scene>
     </scenes>
     <resources>

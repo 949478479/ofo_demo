@@ -7,37 +7,8 @@
 //
 
 import UIKit
-import SnapKit
 
-protocol DummyNavigationBar {
-    func configureDummyNavigationBar()
-}
-
-extension DummyNavigationBar where Self: UIViewController {
-
-    func configureDummyNavigationBar() {
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = .white
-        view.addSubview(backgroundView)
-        backgroundView.snp.makeConstraints {
-            $0.height.equalTo(64)
-            $0.top.left.right.equalToSuperview()
-        }
-
-        let shadowView = UIImageView(image: #imageLiteral(resourceName: "shadow"))
-        view.addSubview(shadowView)
-        shadowView.snp.makeConstraints {
-            $0.left.right.equalToSuperview()
-            $0.top.equalToSuperview().offset(64)
-        }
-    }
-}
-
-protocol TranslucentNavigationBar {
-    func setNavigationBarTranslucent()
-}
-
-extension TranslucentNavigationBar where Self: UIViewController {
+extension UIViewController {
     func setNavigationBarTranslucent() {
         let navigationBar = lx_navigationBar()
         navigationBar?.shadowImage = UIImage()

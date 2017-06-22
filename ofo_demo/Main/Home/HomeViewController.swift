@@ -8,10 +8,12 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, TranslucentNavigationBar {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarTranslucent()
     }
+
+    @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {}
 }

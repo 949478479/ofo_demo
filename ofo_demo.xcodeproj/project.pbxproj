@@ -78,7 +78,15 @@
 		3E205AAE1EF2EE170021A966 /* LXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E205A711EF2EE170021A966 /* LXUtilities.m */; };
 		3E205AAF1EF2EE170021A966 /* LXUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E205A721EF2EE170021A966 /* LXUtilities.swift */; };
 		3E205AB11EF2EE4F0021A966 /* UIViewController+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E205AB01EF2EE4F0021A966 /* UIViewController+LXExtension.swift */; };
-		3E205AB41EF2F31B0021A966 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E205AB31EF2F31B0021A966 /* WebViewController.swift */; };
+		3E230A821EF9729E003CB963 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E230A811EF9729E003CB963 /* User.storyboard */; };
+		3E230A851EF97E34003CB963 /* UserCenterContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E230A841EF97E34003CB963 /* UserCenterContainerViewController.swift */; };
+		3E230A8B1EF99653003CB963 /* UserCenterSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E230A8A1EF99653003CB963 /* UserCenterSegue.swift */; };
+		3E230A8E1EF99AF6003CB963 /* PresentUserCenterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E230A8D1EF99AF6003CB963 /* PresentUserCenterAnimator.swift */; };
+		3E230A911EF9AB7B003CB963 /* DismissUserCenterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E230A901EF9AB7B003CB963 /* DismissUserCenterAnimator.swift */; };
+		3E230A931EF9B251003CB963 /* UserCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E230A921EF9B251003CB963 /* UserCenterViewController.swift */; };
+		3E2670521EFBD01000FB76A0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E26704F1EFBCFF400FB76A0 /* WebViewController.swift */; };
+		3E2670531EFBD01200FB76A0 /* DummyNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E26704E1EFBCFF400FB76A0 /* DummyNavigationBarViewController.swift */; };
+		3E2670541EFBD01700FB76A0 /* DummyNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */; };
 		3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -210,7 +218,15 @@
 		3E205A711EF2EE170021A966 /* LXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXUtilities.m; sourceTree = "<group>"; };
 		3E205A721EF2EE170021A966 /* LXUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXUtilities.swift; sourceTree = "<group>"; };
 		3E205AB01EF2EE4F0021A966 /* UIViewController+LXExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+LXExtension.swift"; sourceTree = "<group>"; };
-		3E205AB31EF2F31B0021A966 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		3E230A811EF9729E003CB963 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		3E230A841EF97E34003CB963 /* UserCenterContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenterContainerViewController.swift; sourceTree = "<group>"; };
+		3E230A8A1EF99653003CB963 /* UserCenterSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenterSegue.swift; sourceTree = "<group>"; };
+		3E230A8D1EF99AF6003CB963 /* PresentUserCenterAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentUserCenterAnimator.swift; sourceTree = "<group>"; };
+		3E230A901EF9AB7B003CB963 /* DismissUserCenterAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissUserCenterAnimator.swift; sourceTree = "<group>"; };
+		3E230A921EF9B251003CB963 /* UserCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenterViewController.swift; sourceTree = "<group>"; };
+		3E26704E1EFBCFF400FB76A0 /* DummyNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNavigationBarViewController.swift; sourceTree = "<group>"; };
+		3E26704F1EFBCFF400FB76A0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNavigationBar.swift; sourceTree = "<group>"; };
 		3EEC9FC41EF15DC000B0FC80 /* ofo_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
 		51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +263,7 @@
 				3E2059271EF2E9ED0021A966 /* Login */,
 				3E2059201EF2E9ED0021A966 /* Gift */,
 				3E2059231EF2E9ED0021A966 /* Home */,
+				3E230A801EF9728C003CB963 /* User */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -503,9 +520,64 @@
 		3E205AB21EF2F30E0021A966 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				3E205AB31EF2F31B0021A966 /* WebViewController.swift */,
+				3E2670501EFBCFF400FB76A0 /* View */,
+				3E26704D1EFBCFF400FB76A0 /* Controller */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		3E230A801EF9728C003CB963 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				3E230A811EF9729E003CB963 /* User.storyboard */,
+				3E230A8C1EF99AD7003CB963 /* Animator */,
+				3E230A871EF98D0A003CB963 /* View */,
+				3E230A831EF97E1F003CB963 /* Controller */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		3E230A831EF97E1F003CB963 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E230A841EF97E34003CB963 /* UserCenterContainerViewController.swift */,
+				3E230A921EF9B251003CB963 /* UserCenterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3E230A871EF98D0A003CB963 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E230A8A1EF99653003CB963 /* UserCenterSegue.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E230A8C1EF99AD7003CB963 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				3E230A8D1EF99AF6003CB963 /* PresentUserCenterAnimator.swift */,
+				3E230A901EF9AB7B003CB963 /* DismissUserCenterAnimator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		3E26704D1EFBCFF400FB76A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E26704E1EFBCFF400FB76A0 /* DummyNavigationBarViewController.swift */,
+				3E26704F1EFBCFF400FB76A0 /* WebViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3E2670501EFBCFF400FB76A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3EEC9FBB1EF15DC000B0FC80 = {
@@ -583,12 +655,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "从今以后";
 				TargetAttributes = {
 					3EEC9FC31EF15DC000B0FC80 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 6U2XW736FX;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -621,6 +694,7 @@
 				3E2059301EF2E9ED0021A966 /* Home.storyboard in Resources */,
 				3E20592E1EF2E9ED0021A966 /* Gift.storyboard in Resources */,
 				3E2059F31EF2EA5D0021A966 /* Assets.xcassets in Resources */,
+				3E230A821EF9729E003CB963 /* User.storyboard in Resources */,
 				3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -681,11 +755,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E205AAB1EF2EE170021A966 /* UIWebView+LXExtension.m in Sources */,
-				3E205AB41EF2F31B0021A966 /* WebViewController.swift in Sources */,
 				3E205A8A1EF2EE170021A966 /* NSURLRequest+LXExtension.m in Sources */,
 				3E205A961EF2EE170021A966 /* CGGeometry+LXExtension.swift in Sources */,
 				3E2059341EF2E9ED0021A966 /* LoginVideoViewController.swift in Sources */,
 				3E205A7A1EF2EE170021A966 /* LXTimer.m in Sources */,
+				3E2670531EFBD01200FB76A0 /* DummyNavigationBarViewController.swift in Sources */,
 				3E205AAD1EF2EE170021A966 /* WKWebView+LXExtension.m in Sources */,
 				3E205A7F1EF2EE170021A966 /* NSAttributedString+LXExtension.m in Sources */,
 				3E205AAE1EF2EE170021A966 /* LXUtilities.m in Sources */,
@@ -706,6 +780,7 @@
 				3E205A861EF2EE170021A966 /* NSNotificationCenter+LXExtension.m in Sources */,
 				3E205A731EF2EE170021A966 /* LXCoreDataController.m in Sources */,
 				3E205A811EF2EE170021A966 /* NSData+LXExtension.m in Sources */,
+				3E230A851EF97E34003CB963 /* UserCenterContainerViewController.swift in Sources */,
 				3E20592F1EF2E9ED0021A966 /* GiftViewController.swift in Sources */,
 				3E205A9D1EF2EE170021A966 /* UIColor+LXExtension.m in Sources */,
 				3E205A9B1EF2EE170021A966 /* UICollectionView+LXExtension.m in Sources */,
@@ -723,9 +798,12 @@
 				3E205A771EF2EE170021A966 /* LXMessageInterceptor.m in Sources */,
 				3E205A981EF2EE170021A966 /* UIApplication+LXExtension.m in Sources */,
 				3E205A851EF2EE170021A966 /* NSManagedObjectModel+LXExtension.m in Sources */,
+				3E230A8E1EF99AF6003CB963 /* PresentUserCenterAnimator.swift in Sources */,
 				3E205A931EF2EE170021A966 /* CATransaction+LXExtension.swift in Sources */,
 				3E205AA41EF2EE170021A966 /* UISearchBar+LXExtension.m in Sources */,
 				3E205A881EF2EE170021A966 /* NSString+LXExtension.m in Sources */,
+				3E230A8B1EF99653003CB963 /* UserCenterSegue.swift in Sources */,
+				3E2670541EFBD01700FB76A0 /* DummyNavigationBar.swift in Sources */,
 				3E205AA61EF2EE170021A966 /* UITableView+LXExtension.m in Sources */,
 				3E2059321EF2E9ED0021A966 /* HomeViewController.swift in Sources */,
 				3E205AB11EF2EE4F0021A966 /* UIViewController+LXExtension.swift in Sources */,
@@ -735,11 +813,14 @@
 				3E205A751EF2EE170021A966 /* LXImagePicker.m in Sources */,
 				3E205A8B1EF2EE170021A966 /* LXRingAnimatedView.m in Sources */,
 				3E205AA81EF2EE170021A966 /* UITextView+LXExtension.m in Sources */,
+				3E2670521EFBD01000FB76A0 /* WebViewController.swift in Sources */,
 				3E205AAC1EF2EE170021A966 /* UIWindow+LXExtension.m in Sources */,
 				3E205AAA1EF2EE170021A966 /* UIViewController+LXExtension.m in Sources */,
 				3E205A8E1EF2EE170021A966 /* CALayer+LXExtension.m in Sources */,
 				3E205AA91EF2EE170021A966 /* UIView+LXExtension.m in Sources */,
 				3E205A9E1EF2EE170021A966 /* UIDevice+LXExtension.m in Sources */,
+				3E230A931EF9B251003CB963 /* UserCenterViewController.swift in Sources */,
+				3E230A911EF9AB7B003CB963 /* DismissUserCenterAnimator.swift in Sources */,
 				3E205A921EF2EE170021A966 /* CALayer+LXExtension.swift in Sources */,
 				3E205A951EF2EE170021A966 /* CGAffineTransform+LXExtension.swift in Sources */,
 				3E205AA51EF2EE170021A966 /* UIStoryboard+LXExtension.m in Sources */,
@@ -762,7 +843,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -770,7 +853,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -812,7 +899,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -820,7 +909,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
