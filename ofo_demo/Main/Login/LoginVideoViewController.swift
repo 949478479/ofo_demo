@@ -53,16 +53,16 @@ extension LoginVideoViewController {
         }
     }
 
-    func loopPlayVideo() {
+    @objc func loopPlayVideo() {
         playerViewContrller.player?.seek(to: kCMTimeZero)
         playerViewContrller.player?.play()
     }
 
-    func playVideo() {
+    @objc func playVideo() {
         playerViewContrller.player?.play()
     }
 
-    func pauseVideo() {
+    @objc func pauseVideo() {
         playerViewContrller.player?.pause()
     }
 

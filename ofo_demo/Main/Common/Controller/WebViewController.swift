@@ -10,13 +10,13 @@ import UIKit
 
 class WebViewController: DummyNavigationBarViewController {
 
-    fileprivate struct KVOContext {
+    private struct KVOContext {
         static var title = 0
         static var estimatedProgress = 0
     }
 
     let webView = WKWebView()
-    fileprivate let progressView = UIProgressView()
+    private let progressView = UIProgressView()
 
     deinit {
         removeAllObservers()
@@ -68,7 +68,7 @@ extension WebViewController {
         }
     }
 
-    fileprivate func removeAllObservers() {
+    private func removeAllObservers() {
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.title))
         webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress))
     }

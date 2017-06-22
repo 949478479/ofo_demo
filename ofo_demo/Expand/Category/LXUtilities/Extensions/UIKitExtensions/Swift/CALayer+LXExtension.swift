@@ -52,11 +52,11 @@ extension CALayer {
             init(completion: @escaping (Bool) -> ()) {
                 self.completion = completion
             }
-            fileprivate func animationDidStart(_ anim: CAAnimation) {}
-            fileprivate func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-                completion?(flag)
-                completion = nil
-            }
+			func animationDidStart(_ anim: CAAnimation) {}
+			func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+				completion?(flag)
+				completion = nil
+			}
         }
 
         if let completion = completion {

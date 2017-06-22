@@ -10,9 +10,14 @@ import UIKit
 
 class UserCenterContainerViewController: UIViewController {
 
-    @IBOutlet var topBackgroundView: UIView!
-    @IBOutlet var tableViewContainerView: UIView!
-    @IBInspectable var extraContainerViewHeight: CGFloat = 0
+    @IBOutlet private(set)
+	var topBackgroundView: UIView!
+	
+    @IBOutlet private(set)
+	var tableViewContainerView: UIView!
+
+    @IBInspectable private(set)
+	var extraContainerViewHeight: CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +35,7 @@ class UserCenterContainerViewController: UIViewController {
 	}
 }
 
-fileprivate extension UserCenterContainerViewController {
+private extension UserCenterContainerViewController {
 
 	func showNavigationBar() {
 		navigationController?.isNavigationBarHidden = false

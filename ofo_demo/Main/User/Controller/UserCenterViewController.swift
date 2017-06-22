@@ -10,7 +10,7 @@ import UIKit
 
 class UserCenterViewController: UITableViewController {
 
-	fileprivate let animationDuration = 0.35
+	private let animationDuration = 0.35
 }
 
 extension UserCenterViewController {
@@ -33,7 +33,7 @@ extension UserCenterViewController {
 	}
 }
 
-fileprivate extension UserCenterViewController {
+private extension UserCenterViewController {
 
     func animate(cell: UITableViewCell, for indexPath: IndexPath) {
         cell.transform = CGAffineTransform(translationX: 0, y: tableView.rect(forSection: 0).height)
