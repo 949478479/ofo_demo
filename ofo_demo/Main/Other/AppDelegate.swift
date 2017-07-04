@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static let shared = UIApplication.shared.delegate as! AppDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        RunLoop.main.run(until: Date()) // 防止视频背景尚未来得及播放时出现黑色背景
+		// 防止视频背景尚未来得及播放时出现黑色背景
+        RunLoop.main.run(until: Date())
+		configureAMap()
         configureAppearance()
         return true
     }
@@ -31,3 +33,10 @@ extension AppDelegate {
     }
 }
 
+// MARK: 配置高德地图
+extension AppDelegate {
+	func configureAMap() {
+		AMapServices.shared().enableHTTPS = true
+		AMapServices.shared().apiKey = "e681fc722c8f87d788458e1bc43d06d3"
+	}
+}

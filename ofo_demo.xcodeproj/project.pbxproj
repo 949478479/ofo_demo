@@ -87,6 +87,7 @@
 		3E2670521EFBD01000FB76A0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E26704F1EFBCFF400FB76A0 /* WebViewController.swift */; };
 		3E2670531EFBD01200FB76A0 /* DummyNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E26704E1EFBCFF400FB76A0 /* DummyNavigationBarViewController.swift */; };
 		3E2670541EFBD01700FB76A0 /* DummyNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */; };
+		3E4C51D41F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3E4C51D31F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx */; };
 		3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -227,6 +228,7 @@
 		3E26704E1EFBCFF400FB76A0 /* DummyNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNavigationBarViewController.swift; sourceTree = "<group>"; };
 		3E26704F1EFBCFF400FB76A0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNavigationBar.swift; sourceTree = "<group>"; };
+		3E4C51D31F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "中国北京市海淀区紫金大厦.gpx"; path = "../../../../Downloads/中国北京市海淀区紫金大厦.gpx"; sourceTree = "<group>"; };
 		3EEC9FC41EF15DC000B0FC80 /* ofo_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
 		51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -611,6 +613,7 @@
 		3EEC9FDB1EF16B4100B0FC80 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3E4C51D31F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx */,
 				3E2059F21EF2EA5D0021A966 /* Assets.xcassets */,
 				3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */,
 			);
@@ -663,6 +666,11 @@
 						DevelopmentTeam = 6U2XW736FX;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -692,6 +700,7 @@
 				3E2059331EF2E9ED0021A966 /* Login.storyboard in Resources */,
 				3E205A8D1EF2EE170021A966 /* MBProgressHUD+LXExtension.xcassets in Resources */,
 				3E2059301EF2E9ED0021A966 /* Home.storyboard in Resources */,
+				3E4C51D41F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx in Resources */,
 				3E20592E1EF2E9ED0021A966 /* Gift.storyboard in Resources */,
 				3E2059F31EF2EA5D0021A966 /* Assets.xcassets in Resources */,
 				3E230A821EF9729E003CB963 /* User.storyboard in Resources */,
