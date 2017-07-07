@@ -10,22 +10,24 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-	let mapView = MAMapView()
+	@IBOutlet private var anchorView: HomeAnchorView!
+	private let mapView = MAMapView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		configureMapView()
+		configureAnchorView()
         setNavigationBarTranslucent()
     }
 }
 
 // MARK: - seuge
 extension HomeViewController {
-	@IBAction func unwind(for unwindSegue: UIStoryboardSegue) {}
+	@IBAction private func unwind(for unwindSegue: UIStoryboardSegue) {}
 }
 
 // MARK: - 配置地图
-extension HomeViewController {
+private extension HomeViewController {
 
 	func configureMapView() {
 		let representation = MAUserLocationRepresentation()
@@ -40,12 +42,17 @@ extension HomeViewController {
 		mapView.userTrackingMode = .follow
 		mapView.allowsBackgroundLocationUpdates = true
 		mapView.pausesLocationUpdatesAutomatically = false
+		mapView.screenAnchor = CGPoint(x: 0.5, y: 0.375)
 		mapView.showsUserLocation = true
 		
-		view.addSubview(mapView)
+		view.insertSubview(mapView, at: 0)
 		mapView.snp.makeConstraints {
 			$0.edges.equalToSuperview()
 		}
+	}
+
+	func configureAnchorView() {
+		view.bringSubview(toFront: anchorView)
 	}
 
 	func configureUserLocationView() {
@@ -76,6 +83,12 @@ extension HomeViewController: MAMapViewDelegate {
 	func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
 		if !updatingLocation {
 			updateUserHeading()
+		}
+	}
+
+	func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool) {
+		if wasUserAction {
+			anchorView.performAnimation()
 		}
 	}
 }

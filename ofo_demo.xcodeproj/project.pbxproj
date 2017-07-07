@@ -87,6 +87,7 @@
 		3E2670521EFBD01000FB76A0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E26704F1EFBCFF400FB76A0 /* WebViewController.swift */; };
 		3E2670531EFBD01200FB76A0 /* DummyNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E26704E1EFBCFF400FB76A0 /* DummyNavigationBarViewController.swift */; };
 		3E2670541EFBD01700FB76A0 /* DummyNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */; };
+		3E3F9C8D1F0F754200EA7FDF /* HomeAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F9C8C1F0F754200EA7FDF /* HomeAnchorView.swift */; };
 		3E4C51D41F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3E4C51D31F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx */; };
 		3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */; };
 /* End PBXBuildFile section */
@@ -228,6 +229,7 @@
 		3E26704E1EFBCFF400FB76A0 /* DummyNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNavigationBarViewController.swift; sourceTree = "<group>"; };
 		3E26704F1EFBCFF400FB76A0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNavigationBar.swift; sourceTree = "<group>"; };
+		3E3F9C8C1F0F754200EA7FDF /* HomeAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAnchorView.swift; sourceTree = "<group>"; };
 		3E4C51D31F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "中国北京市海淀区紫金大厦.gpx"; path = "../../../../Downloads/中国北京市海淀区紫金大厦.gpx"; sourceTree = "<group>"; };
 		3EEC9FC41EF15DC000B0FC80 /* ofo_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
@@ -283,8 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				3E2059241EF2E9ED0021A966 /* Home.storyboard */,
-				3E2059251EF2E9ED0021A966 /* HomeDrawerView.swift */,
-				3E2059261EF2E9ED0021A966 /* HomeViewController.swift */,
+				3E3F9C8A1F0F749C00EA7FDF /* View */,
+				3E3F9C8B1F0F74AA00EA7FDF /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -582,6 +584,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3E3F9C8A1F0F749C00EA7FDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E2059251EF2E9ED0021A966 /* HomeDrawerView.swift */,
+				3E3F9C8C1F0F754200EA7FDF /* HomeAnchorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E3F9C8B1F0F74AA00EA7FDF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E2059261EF2E9ED0021A966 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3EEC9FBB1EF15DC000B0FC80 = {
 			isa = PBXGroup;
 			children = (
@@ -821,6 +840,7 @@
 				3E205A8F1EF2EE170021A966 /* CATransaction+LXExtension.m in Sources */,
 				3E205A751EF2EE170021A966 /* LXImagePicker.m in Sources */,
 				3E205A8B1EF2EE170021A966 /* LXRingAnimatedView.m in Sources */,
+				3E3F9C8D1F0F754200EA7FDF /* HomeAnchorView.swift in Sources */,
 				3E205AA81EF2EE170021A966 /* UITextView+LXExtension.m in Sources */,
 				3E2670521EFBD01000FB76A0 /* WebViewController.swift in Sources */,
 				3E205AAC1EF2EE170021A966 /* UIWindow+LXExtension.m in Sources */,
