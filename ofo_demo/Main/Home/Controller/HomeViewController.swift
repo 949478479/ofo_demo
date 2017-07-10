@@ -12,11 +12,15 @@ class HomeViewController: UIViewController {
 
 	@IBOutlet private var anchorView: HomeAnchorView!
 	private let mapView = MAMapView()
+	private let searchAPI = AMapSearchAPI()!
+	private var userLocationView: MAAnnotationView {
+		return mapView.view(for: mapView.userLocation)!
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		configureMapView()
-		configureAnchorView()
+		configureSearchAPI()
         setNavigationBarTranslucent()
     }
 }
@@ -26,7 +30,7 @@ extension HomeViewController {
 	@IBAction private func unwind(for unwindSegue: UIStoryboardSegue) {}
 }
 
-// MARK: - 配置地图
+// MARK: - 地图
 private extension HomeViewController {
 
 	func configureMapView() {
@@ -51,33 +55,63 @@ private extension HomeViewController {
 		}
 	}
 
-	func configureAnchorView() {
-		view.bringSubview(toFront: anchorView)
-	}
-
 	func configureUserLocationView() {
-		if let userLocationView = mapView.view(for: mapView.userLocation) {
-			let headingIndicatorLayer = CALayer()
-			headingIndicatorLayer.contents = #imageLiteral(resourceName: "Homepage_userLocation").cgImage
-			headingIndicatorLayer.frame = userLocationView.bounds.insetBy(dx: -8, dy: -8)
-			userLocationView.layer.insertSublayer(headingIndicatorLayer, at: 0)
-			(userLocationView.value(forKey: "_innerBaseLayer") as! CALayer).shadowOpacity = 0
-		}
+		let headingIndicatorLayer = CALayer()
+		headingIndicatorLayer.contents = #imageLiteral(resourceName: "Homepage_userLocation").cgImage
+		headingIndicatorLayer.frame = userLocationView.bounds.insetBy(dx: -8, dy: -8)
+		userLocationView.layer.insertSublayer(headingIndicatorLayer, at: 0)
+		(userLocationView.value(forKey: "_innerBaseLayer") as! CALayer).shadowOpacity = 0
 	}
 
 	func updateUserHeading() {
-		if let userLocationView = mapView.view(for: mapView.userLocation) {
-			let degree = mapView.userLocation.heading.trueHeading - Double(mapView.rotationDegree)
-			userLocationView.transform = CGAffineTransform(rotationAngle: CGFloat(degree * .pi / 180))
+		let degree = mapView.userLocation.heading.trueHeading - Double(mapView.rotationDegree)
+		userLocationView.transform = CGAffineTransform(rotationAngle: CGFloat(degree * .pi / 180))
+	}
+
+	func addAnnotations(for coordinates: [CLLocationCoordinate2D]) {
+		let oldAnnotations = (mapView.annotations as! [MAAnnotation]).filter { !($0 is MAUserLocation) }
+		mapView.removeAnnotations(oldAnnotations as [Any])
+
+		let newAnnotations = coordinates.map { coordinate -> MAPointAnnotation in
+			let annotation = MAPointAnnotation()
+			annotation.coordinate = coordinate
+			return annotation
 		}
+		mapView.addAnnotations(newAnnotations as [Any])
+	}
+
+	func bringUserLocationViewToFont() {
+		let userLocationView = self.userLocationView
+		userLocationView.superview?.bringSubview(toFront: userLocationView)
+	}
+}
+
+// MARK: - 搜索
+private extension HomeViewController {
+
+	func configureSearchAPI() {
+		searchAPI.delegate = self
+	}
+
+	func performAroundSearch() {
+		let request = AMapPOIAroundSearchRequest()
+		request.radius = 100
+		request.types = "餐饮服务"
+		let centerCoordinate = mapView.centerCoordinate
+		request.location = AMapGeoPoint.location(withLatitude: CGFloat(centerCoordinate.latitude), longitude: CGFloat(centerCoordinate.longitude))
+		searchAPI.aMapPOIAroundSearch(request)
 	}
 }
 
 // MARK: - MAMapViewDelegate
 extension HomeViewController: MAMapViewDelegate {
 
-	func mapView(_ mapView: MAMapView!, didAddAnnotationViews views: [Any]!) {
+	func mapInitComplete(_ mapView: MAMapView!) {
 		configureUserLocationView()
+	}
+
+	func mapView(_ mapView: MAMapView!, didAddAnnotationViews views: [Any]!) {
+		bringUserLocationViewToFont()
 	}
 
 	func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
@@ -88,7 +122,36 @@ extension HomeViewController: MAMapViewDelegate {
 
 	func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool) {
 		if wasUserAction {
+			performAroundSearch()
 			anchorView.performAnimation()
 		}
+	}
+
+	func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
+		guard annotation is MAUserLocation == false else {
+			return nil
+		}
+		let annotationView = NearbyBikeAnnotationView.annotationView(with: mapView, for: annotation)
+		return annotationView
+	}
+}
+
+// MARK: - AMapSearchDelegate
+extension HomeViewController: AMapSearchDelegate {
+
+	func aMapSearchRequest(_ request: Any!, didFailWithError error: Error!) {
+		print(error)
+	}
+
+	func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
+		guard response.count > 0 else {
+			return
+		}
+		let coordinates = response.pois.flatMap { poi -> CLLocationCoordinate2D in
+			let latitude = CLLocationDegrees(poi.location.latitude)
+			let longitude = CLLocationDegrees(poi.location.longitude)
+			return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        }
+		addAnnotations(for: coordinates)
 	}
 }
