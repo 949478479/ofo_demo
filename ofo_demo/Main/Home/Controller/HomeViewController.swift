@@ -14,9 +14,7 @@ class HomeViewController: UIViewController {
 	private let mapView = MAMapView()
 	private let searchAPI = AMapSearchAPI()!
 	private var didUpdateUserLocation = false
-	private var userLocationView: MAAnnotationView {
-		return mapView.view(for: mapView.userLocation)!
-	}
+	private var userLocationView: MAAnnotationView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,17 +56,24 @@ private extension HomeViewController {
 		}
 	}
 
-	func configureUserLocationView() {
-		let headingIndicatorLayer = CALayer()
-		headingIndicatorLayer.contents = #imageLiteral(resourceName: "Homepage_userLocation").cgImage
-		headingIndicatorLayer.frame = userLocationView.bounds.insetBy(dx: -8, dy: -8)
-		userLocationView.layer.insertSublayer(headingIndicatorLayer, at: 0)
-		(userLocationView.value(forKey: "_innerBaseLayer") as! CALayer).shadowOpacity = 0
+	func initUserLocationViewIfNeeded() {
+		if userLocationView == nil {
+			guard let userLocationView = mapView.view(for: mapView.userLocation) else {
+				fatalError()
+			}
+			let headingIndicatorLayer = CALayer()
+			headingIndicatorLayer.contents = #imageLiteral(resourceName: "Homepage_userLocation").cgImage
+			headingIndicatorLayer.frame = userLocationView.bounds.insetBy(dx: -8, dy: -8)
+			userLocationView.layer.insertSublayer(headingIndicatorLayer, at: 0)
+			(userLocationView.value(forKey: "_innerBaseLayer") as! CALayer).shadowOpacity = 0
+		}
 	}
 
 	func updateUserHeading() {
-		let degree = mapView.userLocation.heading.trueHeading - Double(mapView.rotationDegree)
-		userLocationView.transform = CGAffineTransform(rotationAngle: CGFloat(degree * .pi / 180))
+		if let userLocationView = userLocationView {
+			let degree = mapView.userLocation.heading.trueHeading - Double(mapView.rotationDegree)
+			userLocationView.transform = CGAffineTransform(rotationAngle: CGFloat(degree * .pi / 180))
+		}
 	}
 
 	func addAnnotations(for POIs: [AMapPOI]) {
@@ -88,8 +93,9 @@ private extension HomeViewController {
 	}
 
 	func bringUserLocationViewToFont() {
-		let userLocationView = self.userLocationView
-		userLocationView.superview?.bringSubview(toFront: userLocationView)
+		if let userLocationView = userLocationView {
+			userLocationView.superview?.bringSubview(toFront: userLocationView)
+		}
 	}
 }
 
@@ -113,11 +119,8 @@ private extension HomeViewController {
 // MARK: - MAMapViewDelegate
 extension HomeViewController: MAMapViewDelegate {
 
-	func mapInitComplete(_ mapView: MAMapView!) {
-		configureUserLocationView()
-	}
-
 	func mapView(_ mapView: MAMapView!, didAddAnnotationViews views: [Any]!) {
+		initUserLocationViewIfNeeded()
 		bringUserLocationViewToFont()
 	}
 
