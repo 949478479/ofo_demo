@@ -10,24 +10,46 @@ import UIKit
 
 class HomeDrawerView: UIView {
 
-    @IBInspectable @objc private var topOnClose: CGFloat = 0
+	@IBInspectable var arcHight: CGFloat = 0
+    @IBInspectable var heightOnClose: CGFloat = 0
     @IBOutlet private var topConstraint: NSLayoutConstraint! {
         didSet {
-            topConstraint.constant = topOnClose
+            topConstraint.constant = heightOnClose
         }
     }
 
+    @IBOutlet var handleButton: UIButton!
     @IBOutlet var userCenterButton: UIButton!
     @IBOutlet var giftCenterButton: UIButton!
-    @IBOutlet private var handleButton: UIButton! {
-        didSet {
-            handleButton.addTarget(self, action: #selector(switchDrawerState), for: .touchUpInside)
-        }
-    }
 
     private(set) var isOpen = false
+}
 
-    @IBAction func open() {
+// MARK: - 绘制
+extension HomeDrawerView {
+
+	override func draw(_ rect: CGRect) {
+		let path = CGMutablePath()
+		path.move(to: CGPoint(x: rect.minX, y: arcHight))
+		path.addQuadCurve(to: CGPoint(x: rect.maxX, y: arcHight), control: CGPoint(x: rect.midX, y: -arcHight))
+
+		layer.shadowPath = path
+		layer.shadowOpacity = 0.1
+
+		path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+		path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+
+		let context = UIGraphicsGetCurrentContext()
+		context?.addPath(path)
+		context?.setFillColor(red: 1, green: 1, blue: 1, alpha: 1)
+		context?.fillPath()
+	}
+}
+
+// MARK: - 开合控制
+extension HomeDrawerView {
+
+	@IBAction func open() {
         guard !isOpen else {
             return
         }
@@ -41,12 +63,12 @@ class HomeDrawerView: UIView {
         switchDrawerState()
     }
 
-    @objc private func switchDrawerState() {
+    @IBAction private func switchDrawerState() {
         if isOpen {
             isOpen = false
             handleButton.isSelected = false
             handleButton.lx_normalImage = #imageLiteral(resourceName: "arrowup")
-            topConstraint.constant = topOnClose
+            topConstraint.constant = heightOnClose
         } else {
             isOpen = true
             handleButton.isSelected = true
