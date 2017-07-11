@@ -8,5 +8,6 @@ target 'ofo_demo' do
 pod 'SnapKit'
 pod 'AMap3DMap'
 pod 'AMapSearch'
+pod 'MBProgressHUD'
 
 end
