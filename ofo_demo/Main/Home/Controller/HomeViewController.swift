@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
 	@IBOutlet private var anchorView: HomeAnchorView!
 	private let mapView = MAMapView()
 	private let searchAPI = AMapSearchAPI()!
+	private var didUpdateUserLocation = false
 	private var userLocationView: MAAnnotationView {
 		return mapView.view(for: mapView.userLocation)!
 	}
@@ -40,13 +41,15 @@ private extension HomeViewController {
 
 		mapView.zoomLevel = 19
 		mapView.delegate = self
+		mapView.distanceFilter = 10
 		mapView.showsCompass = false
+		mapView.headingFilter = .pi / 6
 		mapView.isRotateEnabled = false
-		mapView.isRotateCameraEnabled = false
 		mapView.userTrackingMode = .follow
+		mapView.isRotateCameraEnabled = false
 		mapView.allowsBackgroundLocationUpdates = true
-		mapView.pausesLocationUpdatesAutomatically = false
 		mapView.screenAnchor = CGPoint(x: 0.5, y: 0.375)
+		mapView.pausesLocationUpdatesAutomatically = false
 		mapView.showsUserLocation = true
 		
 		view.insertSubview(mapView, at: 0)
@@ -68,13 +71,17 @@ private extension HomeViewController {
 		userLocationView.transform = CGAffineTransform(rotationAngle: CGFloat(degree * .pi / 180))
 	}
 
-	func addAnnotations(for coordinates: [CLLocationCoordinate2D]) {
+	func addAnnotations(for POIs: [AMapPOI]) {
 		let oldAnnotations = (mapView.annotations as! [MAAnnotation]).filter { !($0 is MAUserLocation) }
 		mapView.removeAnnotations(oldAnnotations as [Any])
 
-		let newAnnotations = coordinates.map { coordinate -> MAPointAnnotation in
+		let newAnnotations = POIs.map { poi -> MAPointAnnotation in
 			let annotation = MAPointAnnotation()
-			annotation.coordinate = coordinate
+			annotation.coordinate = {
+				let latitude = CLLocationDegrees(poi.location.latitude)
+				let longitude = CLLocationDegrees(poi.location.longitude)
+				return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+			}()
 			return annotation
 		}
 		mapView.addAnnotations(newAnnotations as [Any])
@@ -115,7 +122,12 @@ extension HomeViewController: MAMapViewDelegate {
 	}
 
 	func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
-		if !updatingLocation {
+		if updatingLocation {
+			if !didUpdateUserLocation && userLocation.location.timestamp.timeIntervalSinceNow > -10 {
+				didUpdateUserLocation = true
+				performAroundSearch()
+			}
+		} else {
 			updateUserHeading()
 		}
 	}
@@ -147,11 +159,6 @@ extension HomeViewController: AMapSearchDelegate {
 		guard response.count > 0 else {
 			return
 		}
-		let coordinates = response.pois.flatMap { poi -> CLLocationCoordinate2D in
-			let latitude = CLLocationDegrees(poi.location.latitude)
-			let longitude = CLLocationDegrees(poi.location.longitude)
-			return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        }
-		addAnnotations(for: coordinates)
+		addAnnotations(for: response.pois)
 	}
 }
