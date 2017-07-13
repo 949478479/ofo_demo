@@ -11,12 +11,14 @@ import MBProgressHUD
 
 class HomeViewController: UIViewController {
 
-	@IBOutlet private var anchorView: HomeAnchorView!
+	@IBOutlet
+	private var anchorView: HomeAnchorView!
 	private let mapView = MAMapView()
 	private let searchAPI = AMapSearchAPI()!
 	private var didUpdateUserLocation = false
-	private var userLocationView: MAAnnotationView?
+	private var navigationRoute: NavigationRoute?
 	private var routePlanIndicator: MBProgressHUD?
+	private var userLocationView: MAAnnotationView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,7 @@ private extension HomeViewController {
 		mapView.update(representation)
 
 		mapView.zoomLevel = 19
+		mapView.mapType = .bus
 		mapView.delegate = self
 		mapView.distanceFilter = 10
 		mapView.showsCompass = false
@@ -98,6 +101,14 @@ private extension HomeViewController {
 		if let userLocationView = userLocationView {
 			userLocationView.superview?.bringSubview(toFront: userLocationView)
 		}
+	}
+
+	func show(_ route: AMapRoute) {
+		navigationRoute?.remove(from: mapView)
+		let userCoordinate = mapView.userLocation.coordinate
+		let bikeCoordinate = (mapView.selectedAnnotations[0] as! MAPointAnnotation).coordinate
+		navigationRoute = NavigationRoute(path: route.paths[0], startCoordinate: userCoordinate, endCoordinate: bikeCoordinate)
+		navigationRoute?.add(to: mapView)
 	}
 }
 
@@ -165,6 +176,16 @@ extension HomeViewController: MAMapViewDelegate {
 		return annotationView
 	}
 
+	func mapView(_ mapView: MAMapView!, rendererFor overlay: MAOverlay!) -> MAOverlayRenderer! {
+		guard overlay is MAPolyline else {
+			return nil
+		}
+		let renderer: MAPolylineRenderer = MAPolylineRenderer(overlay: overlay)
+		renderer.lineWidth = 20.0
+		renderer.loadStrokeTextureImage(#imageLiteral(resourceName: "HomePage_path"))
+		return renderer
+	}
+
 	func mapView(_ mapView: MAMapView!, didSelect view: MAAnnotationView!) {
 		if view.annotation is MAUserLocation == false {
 			performWalkingRouteSearch(for: view.annotation.coordinate)
@@ -177,7 +198,7 @@ extension HomeViewController: AMapSearchDelegate {
 
 	func aMapSearchRequest(_ request: Any!, didFailWithError error: Error!) {
 		routePlanIndicator?.hide(animated: true)
-		print(error)
+		printLog("\(error)")
 	}
 
 	func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
@@ -189,7 +210,7 @@ extension HomeViewController: AMapSearchDelegate {
 	func onRouteSearchDone(_ request: AMapRouteSearchBaseRequest!, response: AMapRouteSearchResponse!) {
 		routePlanIndicator?.hide(animated: true)
 		if response.count > 0 {
-			print("路径规划成功")
+			show(response.route)
 		}
 	}
 }
