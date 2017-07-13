@@ -87,10 +87,11 @@
 		3E2670521EFBD01000FB76A0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E26704F1EFBCFF400FB76A0 /* WebViewController.swift */; };
 		3E2670531EFBD01200FB76A0 /* DummyNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E26704E1EFBCFF400FB76A0 /* DummyNavigationBarViewController.swift */; };
 		3E2670541EFBD01700FB76A0 /* DummyNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */; };
+		3E397AB01F15354200BCB8A2 /* MBProgressHUD+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E397AAF1F15354200BCB8A2 /* MBProgressHUD+LXExtension.swift */; };
 		3E3F9C8D1F0F754200EA7FDF /* HomeAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F9C8C1F0F754200EA7FDF /* HomeAnchorView.swift */; };
 		3E3F9C8F1F0F901500EA7FDF /* NearbyBikeAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F9C8E1F0F901500EA7FDF /* NearbyBikeAnnotationView.swift */; };
-		3E3F9C911F0FAFA400EA7FDF /* CLLocation+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F9C901F0FAFA400EA7FDF /* CLLocation+LXExtension.swift */; };
 		3E4C51D41F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3E4C51D31F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx */; };
+		3E7E2A301F154DF50020BD07 /* NSObjectProtocol+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E2A2F1F154DF50020BD07 /* NSObjectProtocol+LXExtension.swift */; };
 		3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -231,10 +232,11 @@
 		3E26704E1EFBCFF400FB76A0 /* DummyNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNavigationBarViewController.swift; sourceTree = "<group>"; };
 		3E26704F1EFBCFF400FB76A0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNavigationBar.swift; sourceTree = "<group>"; };
+		3E397AAF1F15354200BCB8A2 /* MBProgressHUD+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+LXExtension.swift"; sourceTree = "<group>"; };
 		3E3F9C8C1F0F754200EA7FDF /* HomeAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAnchorView.swift; sourceTree = "<group>"; };
 		3E3F9C8E1F0F901500EA7FDF /* NearbyBikeAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBikeAnnotationView.swift; sourceTree = "<group>"; };
-		3E3F9C901F0FAFA400EA7FDF /* CLLocation+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+LXExtension.swift"; sourceTree = "<group>"; };
 		3E4C51D31F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "中国北京市海淀区紫金大厦.gpx"; path = "../../../../Downloads/中国北京市海淀区紫金大厦.gpx"; sourceTree = "<group>"; };
+		3E7E2A2F1F154DF50020BD07 /* NSObjectProtocol+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObjectProtocol+LXExtension.swift"; sourceTree = "<group>"; };
 		3EEC9FC41EF15DC000B0FC80 /* ofo_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
 		51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -326,8 +328,9 @@
 			isa = PBXGroup;
 			children = (
 				3E2059F61EF2EE170021A966 /* LXUtilities */,
-				3E3F9C901F0FAFA400EA7FDF /* CLLocation+LXExtension.swift */,
 				3E205AB01EF2EE4F0021A966 /* UIViewController+LXExtension.swift */,
+				3E397AAF1F15354200BCB8A2 /* MBProgressHUD+LXExtension.swift */,
+				3E7E2A2F1F154DF50020BD07 /* NSObjectProtocol+LXExtension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				3E205A7F1EF2EE170021A966 /* NSAttributedString+LXExtension.m in Sources */,
 				3E205AAE1EF2EE170021A966 /* LXUtilities.m in Sources */,
 				3E205A791EF2EE170021A966 /* LXMulticastDelegate.m in Sources */,
+				3E397AB01F15354200BCB8A2 /* MBProgressHUD+LXExtension.swift in Sources */,
 				3E205AA21EF2EE170021A966 /* UIScreen+LXExtension.m in Sources */,
 				3E205AA01EF2EE170021A966 /* UIImage+LXExtension.m in Sources */,
 				3E205A7C1EF2EE170021A966 /* GCD+LXExtension.m in Sources */,
@@ -805,7 +809,6 @@
 				3E205AA11EF2EE170021A966 /* UILabel+LXExtension.m in Sources */,
 				3E205AAF1EF2EE170021A966 /* LXUtilities.swift in Sources */,
 				3E205A841EF2EE170021A966 /* NSFileManager+LXExtension.m in Sources */,
-				3E3F9C911F0FAFA400EA7FDF /* CLLocation+LXExtension.swift in Sources */,
 				3E205A871EF2EE170021A966 /* NSObject+LXExtension.m in Sources */,
 				3E205A901EF2EE170021A966 /* NSLayoutConstraint+LXExtension.m in Sources */,
 				3E2059311EF2E9ED0021A966 /* HomeDrawerView.swift in Sources */,
@@ -836,6 +839,7 @@
 				3E230A8E1EF99AF6003CB963 /* PresentUserCenterAnimator.swift in Sources */,
 				3E205A931EF2EE170021A966 /* CATransaction+LXExtension.swift in Sources */,
 				3E3F9C8F1F0F901500EA7FDF /* NearbyBikeAnnotationView.swift in Sources */,
+				3E7E2A301F154DF50020BD07 /* NSObjectProtocol+LXExtension.swift in Sources */,
 				3E205AA41EF2EE170021A966 /* UISearchBar+LXExtension.m in Sources */,
 				3E205A881EF2EE170021A966 /* NSString+LXExtension.m in Sources */,
 				3E230A8B1EF99653003CB963 /* UserCenterSegue.swift in Sources */,

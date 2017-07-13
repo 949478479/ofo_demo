@@ -8,10 +8,10 @@
 
 import UIKit
 
-extension UIViewController {
-    func setNavigationBarTranslucent() {
-        let navigationBar = lx_navigationBar()
-        navigationBar?.shadowImage = UIImage()
-        navigationBar?.setBackgroundImage(UIImage(), for: .default)
-    }
+extension Swifty where Base: UIViewController {
+	func setNavigationBarTranslucent() {
+		let navigationBar = base.lx_navigationBar()
+		navigationBar?.shadowImage = UIImage()
+		navigationBar?.setBackgroundImage(UIImage(), for: .default)
+	}
 }

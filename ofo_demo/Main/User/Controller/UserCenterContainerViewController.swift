@@ -21,7 +21,7 @@ class UserCenterContainerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		setNavigationBarTranslucent()
+		lx.setNavigationBarTranslucent()
     }
 
 	override func viewWillAppear(_ animated: Bool) {

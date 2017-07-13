@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class HomeViewController: UIViewController {
 
@@ -15,13 +16,14 @@ class HomeViewController: UIViewController {
 	private let searchAPI = AMapSearchAPI()!
 	private var didUpdateUserLocation = false
 	private var userLocationView: MAAnnotationView?
+	private var routePlanIndicator: MBProgressHUD?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		configureMapView()
 		configureSearchAPI()
-        setNavigationBarTranslucent()
-    }
+        lx.setNavigationBarTranslucent()
+	}
 }
 
 // MARK: - seuge
@@ -106,13 +108,26 @@ private extension HomeViewController {
 		searchAPI.delegate = self
 	}
 
-	func performAroundSearch() {
+	func performPOIAroundSearch() {
 		let request = AMapPOIAroundSearchRequest()
 		request.radius = 100
 		request.types = "餐饮服务"
 		let centerCoordinate = mapView.centerCoordinate
 		request.location = AMapGeoPoint.location(withLatitude: CGFloat(centerCoordinate.latitude), longitude: CGFloat(centerCoordinate.longitude))
 		searchAPI.aMapPOIAroundSearch(request)
+	}
+
+	func performWalkingRouteSearch(for destination: CLLocationCoordinate2D) {
+		let centerCoordinate = mapView.centerCoordinate
+		let origin = AMapGeoPoint.location(withLatitude: CGFloat(centerCoordinate.latitude), longitude: CGFloat(centerCoordinate.longitude))
+		let destination = AMapGeoPoint.location(withLatitude: CGFloat(destination.latitude), longitude: CGFloat(destination.longitude))
+
+		let request = AMapWalkingRouteSearchRequest()
+		request.origin = origin
+		request.destination = destination
+
+		routePlanIndicator = MBProgressHUD.lx.showRoutePlanIndicator()
+		searchAPI.aMapWalkingRouteSearch(request)
 	}
 }
 
@@ -128,7 +143,7 @@ extension HomeViewController: MAMapViewDelegate {
 		if updatingLocation {
 			if !didUpdateUserLocation && userLocation.location.timestamp.timeIntervalSinceNow > -10 {
 				didUpdateUserLocation = true
-				performAroundSearch()
+				performPOIAroundSearch()
 			}
 		} else {
 			updateUserHeading()
@@ -137,7 +152,7 @@ extension HomeViewController: MAMapViewDelegate {
 
 	func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool) {
 		if wasUserAction {
-			performAroundSearch()
+			performPOIAroundSearch()
 			anchorView.performAnimation()
 		}
 	}
@@ -149,19 +164,32 @@ extension HomeViewController: MAMapViewDelegate {
 		let annotationView = NearbyBikeAnnotationView.annotationView(with: mapView, for: annotation)
 		return annotationView
 	}
+
+	func mapView(_ mapView: MAMapView!, didSelect view: MAAnnotationView!) {
+		if view.annotation is MAUserLocation == false {
+			performWalkingRouteSearch(for: view.annotation.coordinate)
+		}
+	}
 }
 
 // MARK: - AMapSearchDelegate
 extension HomeViewController: AMapSearchDelegate {
 
 	func aMapSearchRequest(_ request: Any!, didFailWithError error: Error!) {
+		routePlanIndicator?.hide(animated: true)
 		print(error)
 	}
 
 	func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
-		guard response.count > 0 else {
-			return
+		if response.count > 0 {
+			addAnnotations(for: response.pois)
 		}
-		addAnnotations(for: response.pois)
+	}
+
+	func onRouteSearchDone(_ request: AMapRouteSearchBaseRequest!, response: AMapRouteSearchResponse!) {
+		routePlanIndicator?.hide(animated: true)
+		if response.count > 0 {
+			print("路径规划成功")
+		}
 	}
 }
