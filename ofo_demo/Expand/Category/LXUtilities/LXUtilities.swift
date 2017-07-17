@@ -7,6 +7,30 @@
 
 import Foundation
 
+struct Swifty<Base> {
+	let base: Base
+	init(_ base: Base) {
+		self.base = base
+	}
+}
+
+protocol SwiftyProtocol {
+	associatedtype CompatibleType
+	var lx: Swifty<CompatibleType> { get }
+	static var lx: Swifty<CompatibleType>.Type { get }
+}
+
+extension SwiftyProtocol {
+	var lx: Swifty<Self> {
+		return Swifty(self)
+	}
+	static var lx: Swifty<Self>.Type {
+		return Swifty<Self>.self
+	}
+}
+
+extension NSObject: SwiftyProtocol {}
+
 func printLog(_ log: String, file: String = #file, line: Int = #line, function: String = #function) {
     #if DEBUG
         print("\(function) at \((file as NSString).lastPathComponent)[\(line)]", log)
@@ -20,8 +44,11 @@ func value(from object: Any, forKey key: String) -> Any? {
     return nil
 }
 
-func synchronized(_ obj: Any, _ closure: () -> Void) {
-    objc_sync_enter(obj)
-    closure()
-    objc_sync_exit(obj)
+extension Swifty where Base: AnyObject {
+	
+	func synchronized(_ action: () -> Void) {
+		objc_sync_enter(base)
+		action()
+		objc_sync_exit(base)
+	}
 }
