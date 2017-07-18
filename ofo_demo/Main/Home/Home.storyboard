@@ -81,6 +81,18 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="64"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.97951495649999998" green="0.8812022209" blue="0.29774942989999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
@@ -135,13 +147,53 @@
                                     <constraint firstAttribute="bottom" secondItem="xr0-iu-CQG" secondAttribute="bottom" id="qh7-Cf-kfL"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kvi-YC-ky0">
+                                <rect key="frame" x="260" y="210" width="40" height="95"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2l3-h4-wiD">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <state key="normal" image="rightBottomImage"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nag-dR-Lcu" customClass="HomeLocationButton" customModule="ofo_demo">
+                                        <rect key="frame" x="0.0" y="55" width="40" height="40"/>
+                                        <state key="normal" image="leftBottomRefreshImage" backgroundImage="leftBottomBackgroundImage"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="locationButtonDidTap:" destination="gR4-Ye-HQE" eventType="touchUpInside" id="Tx2-nZ-jXP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EeD-hf-K9q" firstAttribute="leading" secondItem="72t-cD-neA" secondAttribute="leading" id="9Qn-pC-lDe"/>
                             <constraint firstAttribute="trailing" secondItem="YkD-nx-jbv" secondAttribute="trailing" id="Lr3-kj-JHv"/>
                             <constraint firstItem="YkD-nx-jbv" firstAttribute="leading" secondItem="72t-cD-neA" secondAttribute="leading" id="Xsg-QO-x4n"/>
+                            <constraint firstItem="EeD-hf-K9q" firstAttribute="top" secondItem="kvi-YC-ky0" secondAttribute="bottom" id="Zya-sS-Tng"/>
                             <constraint firstItem="YkD-nx-jbv" firstAttribute="top" secondItem="72t-cD-neA" secondAttribute="top" id="dUT-VC-0AK"/>
+                            <constraint firstAttribute="trailing" secondItem="kvi-YC-ky0" secondAttribute="trailing" constant="20" id="dlY-aM-oG4"/>
                             <constraint firstAttribute="trailing" secondItem="EeD-hf-K9q" secondAttribute="trailing" id="w6y-hX-P02"/>
                             <constraint firstAttribute="bottom" secondItem="EeD-hf-K9q" secondAttribute="top" constant="263" id="zs0-Aw-JZe"/>
                         </constraints>
@@ -151,6 +203,9 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="wkG-ms-Phw"/>
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="locationButton" destination="Nag-dR-Lcu" id="eg0-yP-g54"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSN-4Z-4AS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="BpH-fF-oh0">
@@ -205,6 +260,9 @@
         <image name="arrowup" width="13" height="8"/>
         <image name="gift_icon" width="25" height="25"/>
         <image name="home_scan_icon" width="30" height="31"/>
+        <image name="leftBottomBackgroundImage" width="40" height="40"/>
+        <image name="leftBottomRefreshImage" width="40" height="40"/>
+        <image name="rightBottomImage" width="40" height="40"/>
         <image name="user_center_icon" width="25" height="25"/>
         <image name="whiteImage" width="375" height="125"/>
         <image name="yellowBikeLogo" width="128" height="27"/>

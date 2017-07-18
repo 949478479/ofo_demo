@@ -99,6 +99,7 @@
 		3ECE67961F18266C0060399A /* BikeAnnotationCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */; };
 		3ED523411F1E0E5800142291 /* UserProfileBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED523401F1E0E5800142291 /* UserProfileBackgroundView.swift */; };
 		3ED523431F1E16BC00142291 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ED523421F1E161F00142291 /* Home.storyboard */; };
+		3ED523451F1E491F00142291 /* HomeLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED523441F1E491F00142291 /* HomeLocationButton.swift */; };
 		3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -251,6 +252,7 @@
 		3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeAnnotationCalloutView.xib; sourceTree = "<group>"; };
 		3ED523401F1E0E5800142291 /* UserProfileBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileBackgroundView.swift; sourceTree = "<group>"; };
 		3ED523421F1E161F00142291 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		3ED523441F1E491F00142291 /* HomeLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocationButton.swift; sourceTree = "<group>"; };
 		3EEC9FC41EF15DC000B0FC80 /* ofo_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
 		51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -614,6 +616,7 @@
 			isa = PBXGroup;
 			children = (
 				3E2059251EF2E9ED0021A966 /* HomeDrawerView.swift */,
+				3ED523441F1E491F00142291 /* HomeLocationButton.swift */,
 				3E3F9C8E1F0F901500EA7FDF /* BikeAnnotationView.swift */,
 				3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */,
 				3E39DBDB1F1D1078008DFB2B /* AnchorAnnotationView.swift */,
@@ -877,6 +880,7 @@
 				3E205A9C1EF2EE170021A966 /* UICollectionViewCell+LXExtension.m in Sources */,
 				3E205A821EF2EE170021A966 /* NSDate+LXExtension.m in Sources */,
 				3E205A771EF2EE170021A966 /* LXMessageInterceptor.m in Sources */,
+				3ED523451F1E491F00142291 /* HomeLocationButton.swift in Sources */,
 				3ED523411F1E0E5800142291 /* UserProfileBackgroundView.swift in Sources */,
 				3E205A981EF2EE170021A966 /* UIApplication+LXExtension.m in Sources */,
 				3E205A851EF2EE170021A966 /* NSManagedObjectModel+LXExtension.m in Sources */,

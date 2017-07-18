@@ -11,6 +11,8 @@ import MBProgressHUD
 
 class HomeViewController: UIViewController {
 
+	@IBOutlet private var locationButton: HomeLocationButton!
+
 	private let mapView = MAMapView()
 	private let searchAPI = AMapSearchAPI()!
 
@@ -22,7 +24,6 @@ class HomeViewController: UIViewController {
 	private var anchorMovementThreshold: CLLocationDistance = 0
 	private var previousSearchCoordinate = CLLocationCoordinate2D()
 	private var previousAnchorCoordinate = CLLocationCoordinate2D()
-
 	private var bikeAnnotationCollection: BikeAnnotationCollection?
 
 	private var isInRoutePlanMode = false
@@ -40,6 +41,27 @@ class HomeViewController: UIViewController {
 // MARK: - seuge
 extension HomeViewController {
 	@IBAction private func unwind(for unwindSegue: UIStoryboardSegue) {}
+}
+
+// MARK: - 悬浮按钮
+private extension HomeViewController {
+
+	@IBAction private func locationButtonDidTap(_ sender: HomeLocationButton) {
+		guard !sender.isRefreshing else { return }
+		if sender.buttonState == .refresh {
+			sender.startRefreshAnimation()
+			endRoutePlanModeIfNeeded()
+			performPOIAroundSearch()
+		} else if sender.buttonState == .location {
+			sender.buttonState = .refresh
+			previousAnchorCoordinate = mapView.userLocation.coordinate
+			if isInRoutePlanMode {
+				endRoutePlanModeIfNeeded()
+			} else {
+				mapView.centerCoordinate = previousAnchorCoordinate
+			}
+		}
+	}
 }
 
 // MARK: - 地图
@@ -72,8 +94,13 @@ private extension HomeViewController {
 // MARK: - 用户位置
 private extension HomeViewController {
 
-	func userLocationIsStale() -> Bool {
-		return mapView.userLocation.location.timestamp.timeIntervalSinceNow < -10
+	func userLocationIsValid() -> Bool {
+		guard let location = mapView.userLocation.location else {
+			return false
+		}
+		let condition1 = location.horizontalAccuracy >= 0
+		let condition2 = location.timestamp.timeIntervalSinceNow > -10
+		return condition1 && condition2
 	}
 
 	func configureUserLocationViewIfNeeded() {
@@ -134,8 +161,11 @@ private extension HomeViewController {
 // MARK: - 点标记
 private extension HomeViewController {
 
-	func showBikeAnnotations(for POIs: [AMapPOI]) {
+	func removeBikeAnnotationsIfNeeded() {
 		bikeAnnotationCollection?.remove(from: mapView)
+	}
+
+	func showBikeAnnotations(for POIs: [AMapPOI]) {
 		bikeAnnotationCollection = BikeAnnotationCollection(POIs: POIs)
 		bikeAnnotationCollection?.add(to: mapView)
 	}
@@ -147,24 +177,31 @@ private extension HomeViewController {
 	func startRoutePlanMode(for route: AMapRoute) {
 		isInRoutePlanMode = true
 		anchorAnnotation?.isLockedToScreen = false
-		show(route)
+		removeRoute()
+		showRoute(route)
 		showBikeAnnotationCallout(for: route)
 	}
 
-	func endRoutePlanMode() {
+	func endRoutePlanModeIfNeeded() {
 		guard isInRoutePlanMode else {
 			return
 		}
 		isInRoutePlanMode = false
-		navigationRoute?.remove(from: mapView)
-		navigationRoute = nil
+		if let bikeAnnotation = mapView.selectedAnnotations?.first as? BikeAnnotation {
+			mapView.deselectAnnotation(bikeAnnotation, animated: false)
+		}
+		removeRoute()
 		anchorAnnotation?.isLockedToScreen = true
 		mapView.centerCoordinate = previousAnchorCoordinate // 这里不能用动画，否则会导致 screenAnchor 属性无效
 		mapView.setZoomLevel(18, animated: true)
 	}
 
-	func show(_ route: AMapRoute) {
+	func removeRoute() {
 		navigationRoute?.remove(from: mapView)
+		navigationRoute = nil
+	}
+
+	func showRoute(_ route: AMapRoute) {
 		let startCoordinate = previousAnchorCoordinate
 		let endCoordinate = (mapView.selectedAnnotations[0] as! BikeAnnotation).coordinate
 		navigationRoute = NavigationRoute(path: route.paths[0], startCoordinate: startCoordinate, endCoordinate: endCoordinate)
@@ -227,7 +264,7 @@ extension HomeViewController: MAMapViewDelegate {
 
 	func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
 		if updatingLocation {
-			if !didUpdateUserLocation && !userLocationIsStale() {
+			if !didUpdateUserLocation && userLocationIsValid() {
 				didUpdateUserLocation = true
 				initAnchorAnnotationIfNeeded()
 				performPOIAroundSearch()
@@ -239,12 +276,17 @@ extension HomeViewController: MAMapViewDelegate {
 
 	// MARK: - 点击
 	func mapView(_ mapView: MAMapView!, didSingleTappedAt coordinate: CLLocationCoordinate2D) {
-		endRoutePlanMode()
+		endRoutePlanModeIfNeeded()
 	}
 
 	// MARK: - 拖拽
 	func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool) {
 		guard wasUserAction else { return }
+
+		if mapView.centerCoordinate != mapView.userLocation.coordinate {
+			locationButton.buttonState = .location
+		}
+
 		if !isInRoutePlanMode {
 			previousAnchorCoordinate = mapView.centerCoordinate
 			if satisfyAnchorMovementThreshold() {
@@ -293,12 +335,20 @@ extension HomeViewController: MAMapViewDelegate {
 extension HomeViewController: AMapSearchDelegate {
 
 	func aMapSearchRequest(_ request: Any!, didFailWithError error: Error!) {
-		routePlanIndicator?.hide(animated: true)
+		if request is AMapPOISearchBaseRequest {
+			locationButton.stopRefreshAnimation()
+			removeBikeAnnotationsIfNeeded()
+		} else if request is AMapRouteSearchBaseRequest {
+			routePlanIndicator?.lx.hide()
+			endRoutePlanModeIfNeeded()
+		}
 		printLog("\(error)")
 	}
 
 	// MARK: - 兴趣点
 	func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
+		locationButton.stopRefreshAnimation()
+		removeBikeAnnotationsIfNeeded()
 		if response.count > 0 {
 			showBikeAnnotations(for: response.pois)
 		}
@@ -306,9 +356,11 @@ extension HomeViewController: AMapSearchDelegate {
 
 	// MARK: - 路径规划
 	func onRouteSearchDone(_ request: AMapRouteSearchBaseRequest!, response: AMapRouteSearchResponse!) {
-		routePlanIndicator?.hide(animated: true)
+		routePlanIndicator?.lx.hide()
 		if response.count > 0 {
 			startRoutePlanMode(for: response.route)
+		} else {
+			endRoutePlanModeIfNeeded()
 		}
 	}
 }

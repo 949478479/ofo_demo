@@ -32,7 +32,11 @@ extension Swifty where Base: MBProgressHUD {
 		return showActivityIndicator(withStatus: "路径规划中...")
 	}
 
-	static func hiden(animated: Bool) {
+	static func hide(animated: Bool = true) {
 		MBProgressHUD.hide(for: UIWindow.lx_key(), animated: animated)
+	}
+
+	func hide(animated: Bool = true) {
+		base.hide(animated: animated)
 	}
 }

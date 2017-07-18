@@ -25,12 +25,11 @@ class AnchorAnnotationView: MAAnnotationView {
 extension AnchorAnnotationView {
 
 	func performBounceAnimation() {
-		UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseOut, animations: {
-			self.lx_centerY -= 20
-		}, completion: { _ in
-			UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseIn, animations: {
-				self.lx_centerY += 20
-			}, completion: nil)
-		})
+		let bounceAnimation = CAKeyframeAnimation(keyPath: "position.y")
+		bounceAnimation.duration = 0.25
+		bounceAnimation.isAdditive = true
+		bounceAnimation.values = [0, -20, 0]
+		bounceAnimation.timingFunctions = [.easeOut, .easeIn]
+		layer.add(bounceAnimation, forKey: nil)
 	}
 }
