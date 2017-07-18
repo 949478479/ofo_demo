@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PwO-xa-LEN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PwO-xa-LEN">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -102,22 +102,24 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_arc_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Vvk-kc-3bn">
-                                    <rect key="frame" x="0.0" y="-100" width="320" height="100"/>
-                                </imageView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEA-yf-fB1" userLabel="Background View">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEA-yf-fB1" userLabel="Background View" customClass="UserProfileBackgroundView" customModule="ofo_demo" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="-39" width="320" height="134"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="95" id="vyT-RR-HRw"/>
+                                        <constraint firstAttribute="height" constant="134" id="vyT-RR-HRw"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="arcHight">
+                                            <real key="value" value="40"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITW-95-3fK">
-                                    <rect key="frame" x="50" y="-79.5" width="80" height="80"/>
+                                    <rect key="frame" x="50" y="-69" width="80" height="80"/>
                                     <state key="normal" image="UserInfo_defaultIcon"/>
                                 </button>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WlA-Bv-wmC">
-                                    <rect key="frame" x="50" y="25.5" width="115.5" height="54.5"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WlA-Bv-wmC">
+                                    <rect key="frame" x="50" y="36" width="115.5" height="44"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150****77724" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hm4-WP-g2d">
                                             <rect key="frame" x="0.0" y="0.0" width="115.5" height="21.5"/>
@@ -125,9 +127,9 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信用分100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpF-Xc-xRT">
-                                            <rect key="frame" x="0.0" y="36.5" width="71.5" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未认证·信用分233" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpF-Xc-xRT">
+                                            <rect key="frame" x="0.0" y="29.5" width="99.5" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.51764705882352935" green="0.51764705882352935" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -136,14 +138,11 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="Vvk-kc-3bn" firstAttribute="leading" secondItem="hzS-ly-4nm" secondAttribute="leading" id="NrP-sg-IoV"/>
                                 <constraint firstAttribute="bottom" secondItem="LEA-yf-fB1" secondAttribute="bottom" id="OCc-0s-HAa"/>
                                 <constraint firstAttribute="bottom" secondItem="WlA-Bv-wmC" secondAttribute="bottom" constant="15" id="Syl-lp-cja"/>
                                 <constraint firstItem="WlA-Bv-wmC" firstAttribute="leading" secondItem="ITW-95-3fK" secondAttribute="leading" id="bfC-dA-S5r"/>
                                 <constraint firstItem="WlA-Bv-wmC" firstAttribute="top" secondItem="ITW-95-3fK" secondAttribute="bottom" constant="25" id="fAa-Sx-lcz"/>
-                                <constraint firstItem="LEA-yf-fB1" firstAttribute="top" secondItem="Vvk-kc-3bn" secondAttribute="bottom" id="hwf-2Z-XVT"/>
                                 <constraint firstItem="ITW-95-3fK" firstAttribute="leading" secondItem="hzS-ly-4nm" secondAttribute="leading" constant="50" id="n9k-gc-Mfh"/>
-                                <constraint firstAttribute="trailing" secondItem="Vvk-kc-3bn" secondAttribute="trailing" id="oje-Gx-Lhv"/>
                                 <constraint firstItem="LEA-yf-fB1" firstAttribute="leading" secondItem="hzS-ly-4nm" secondAttribute="leading" id="r4w-GJ-hUb"/>
                                 <constraint firstAttribute="trailing" secondItem="LEA-yf-fB1" secondAttribute="trailing" id="rBG-pO-9hd"/>
                             </constraints>
@@ -331,8 +330,8 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_slide_usage_guild" translatesAutoresizingMaskIntoConstraints="NO" id="twP-J5-Hl8">
                                                     <rect key="frame" x="50" y="9" width="22" height="22"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用指南" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auD-sO-ot7">
-                                                    <rect key="frame" x="87" y="11" width="61.5" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的客服" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auD-sO-ot7">
+                                                    <rect key="frame" x="87" y="11" width="62" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -405,7 +404,6 @@
     <resources>
         <image name="UserInfo_defaultIcon" width="80" height="80"/>
         <image name="closeFork" width="15" height="15"/>
-        <image name="home_arc_bg" width="375" height="100"/>
         <image name="icon_slide_coupon" width="22" height="22"/>
         <image name="icon_slide_invite" width="22" height="22"/>
         <image name="icon_slide_myMsg" width="22" height="22"/>
