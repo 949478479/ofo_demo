@@ -8,9 +8,20 @@
 
 import Foundation
 
+class RoutePolyline: MAPolyline {}
+
+class RoutePolylineRenderer: MAPolylineRenderer {
+
+	init(polyline: RoutePolyline) {
+		super.init(polyline: polyline)
+		lineWidth = 20.0
+		loadStrokeTextureImage(#imageLiteral(resourceName: "HomePage_path"))
+	}
+}
+
 class NavigationRoute {
 
-	private(set) var routePolyline: MAPolyline
+	private(set) var routePolyline: RoutePolyline
 
 	init(path: AMapPath, startCoordinate: CLLocationCoordinate2D, endCoordinate: CLLocationCoordinate2D) {
 		var coordinates = path.steps.flatMap { step -> [CLLocationCoordinate2D] in
@@ -21,7 +32,7 @@ class NavigationRoute {
 		}
 		coordinates.insert(startCoordinate, at: 0)
 		coordinates.append(endCoordinate)
-		routePolyline = MAPolyline.lx.polyline(with: coordinates)
+		routePolyline = RoutePolyline.lx.polyline(with: coordinates)
 	}
 }
 
@@ -32,6 +43,12 @@ extension NavigationRoute {
 	}
 
 	func remove(from mapView: MAMapView) {
-		mapView.remove(routePolyline)
+		UIView.performWithoutAnimation {
+			mapView.remove(routePolyline)
+		}
+	}
+
+	func renderer(for polyline: RoutePolyline) -> RoutePolylineRenderer {
+		return RoutePolylineRenderer(polyline: polyline)
 	}
 }

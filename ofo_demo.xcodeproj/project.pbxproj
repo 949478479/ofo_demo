@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		105FFDF85E26291565EFD73B /* Pods_ofo_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */; };
+		3E14EF3A1F1DECA2003BB88B /* BikeAnnotationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14EF391F1DECA2003BB88B /* BikeAnnotationCollection.swift */; };
 		3E20592E1EF2E9ED0021A966 /* Gift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2059211EF2E9ED0021A966 /* Gift.storyboard */; };
 		3E20592F1EF2E9ED0021A966 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2059221EF2E9ED0021A966 /* GiftViewController.swift */; };
 		3E2059301EF2E9ED0021A966 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2059241EF2E9ED0021A966 /* Home.storyboard */; };
@@ -88,17 +89,20 @@
 		3E2670531EFBD01200FB76A0 /* DummyNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E26704E1EFBCFF400FB76A0 /* DummyNavigationBarViewController.swift */; };
 		3E2670541EFBD01700FB76A0 /* DummyNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */; };
 		3E397AB01F15354200BCB8A2 /* MBProgressHUD+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E397AAF1F15354200BCB8A2 /* MBProgressHUD+LXExtension.swift */; };
-		3E3F9C8D1F0F754200EA7FDF /* HomeAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F9C8C1F0F754200EA7FDF /* HomeAnchorView.swift */; };
-		3E3F9C8F1F0F901500EA7FDF /* NearbyBikeAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F9C8E1F0F901500EA7FDF /* NearbyBikeAnnotationView.swift */; };
+		3E39DBDA1F1D0B08008DFB2B /* AnchorAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39DBD91F1D0B08008DFB2B /* AnchorAnnotation.swift */; };
+		3E39DBDC1F1D1078008DFB2B /* AnchorAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E39DBDB1F1D1078008DFB2B /* AnchorAnnotationView.swift */; };
+		3E3F9C8F1F0F901500EA7FDF /* BikeAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3F9C8E1F0F901500EA7FDF /* BikeAnnotationView.swift */; };
 		3E4C51D41F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3E4C51D31F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx */; };
 		3E75E6AE1F17D38700259815 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75E6AD1F17D38700259815 /* NavigationRoute.swift */; };
 		3E75E6B01F17F06800259815 /* CLLocation+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75E6AF1F17F06800259815 /* CLLocation+LXExtension.swift */; };
-		3E75E6B21F17FB5200259815 /* MAPolyline+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75E6B11F17FB5200259815 /* MAPolyline+LXExtension.swift */; };
-		3E7E2A301F154DF50020BD07 /* NSObjectProtocol+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E2A2F1F154DF50020BD07 /* NSObjectProtocol+LXExtension.swift */; };
+		3E75E6B21F17FB5200259815 /* AMap+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75E6B11F17FB5200259815 /* AMap+LXExtension.swift */; };
+		3EA4215A1F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA421591F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift */; };
+		3ECE67961F18266C0060399A /* BikeAnnotationCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */; };
 		3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E14EF391F1DECA2003BB88B /* BikeAnnotationCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeAnnotationCollection.swift; sourceTree = "<group>"; };
 		3E2059211EF2E9ED0021A966 /* Gift.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Gift.storyboard; sourceTree = "<group>"; };
 		3E2059221EF2E9ED0021A966 /* GiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
 		3E2059241EF2E9ED0021A966 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -236,13 +240,15 @@
 		3E26704F1EFBCFF400FB76A0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		3E2670511EFBCFF400FB76A0 /* DummyNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNavigationBar.swift; sourceTree = "<group>"; };
 		3E397AAF1F15354200BCB8A2 /* MBProgressHUD+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBProgressHUD+LXExtension.swift"; sourceTree = "<group>"; };
-		3E3F9C8C1F0F754200EA7FDF /* HomeAnchorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAnchorView.swift; sourceTree = "<group>"; };
-		3E3F9C8E1F0F901500EA7FDF /* NearbyBikeAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBikeAnnotationView.swift; sourceTree = "<group>"; };
+		3E39DBD91F1D0B08008DFB2B /* AnchorAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorAnnotation.swift; sourceTree = "<group>"; };
+		3E39DBDB1F1D1078008DFB2B /* AnchorAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorAnnotationView.swift; sourceTree = "<group>"; };
+		3E3F9C8E1F0F901500EA7FDF /* BikeAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeAnnotationView.swift; sourceTree = "<group>"; };
 		3E4C51D31F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "中国北京市海淀区紫金大厦.gpx"; path = "../../../../Downloads/中国北京市海淀区紫金大厦.gpx"; sourceTree = "<group>"; };
 		3E75E6AD1F17D38700259815 /* NavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
 		3E75E6AF1F17F06800259815 /* CLLocation+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+LXExtension.swift"; sourceTree = "<group>"; };
-		3E75E6B11F17FB5200259815 /* MAPolyline+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MAPolyline+LXExtension.swift"; sourceTree = "<group>"; };
-		3E7E2A2F1F154DF50020BD07 /* NSObjectProtocol+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObjectProtocol+LXExtension.swift"; sourceTree = "<group>"; };
+		3E75E6B11F17FB5200259815 /* AMap+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AMap+LXExtension.swift"; sourceTree = "<group>"; };
+		3EA421591F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+LXExtension.swift"; sourceTree = "<group>"; };
+		3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeAnnotationCalloutView.xib; sourceTree = "<group>"; };
 		3EEC9FC41EF15DC000B0FC80 /* ofo_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
 		51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,9 +343,7 @@
 				3E2059F61EF2EE170021A966 /* LXUtilities */,
 				3E205AB01EF2EE4F0021A966 /* UIViewController+LXExtension.swift */,
 				3E397AAF1F15354200BCB8A2 /* MBProgressHUD+LXExtension.swift */,
-				3E7E2A2F1F154DF50020BD07 /* NSObjectProtocol+LXExtension.swift */,
-				3E75E6AF1F17F06800259815 /* CLLocation+LXExtension.swift */,
-				3E75E6B11F17FB5200259815 /* MAPolyline+LXExtension.swift */,
+				3E75E6B11F17FB5200259815 /* AMap+LXExtension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -395,6 +399,7 @@
 		3E205A0B1EF2EE170021A966 /* FoundationExtensions */ = {
 			isa = PBXGroup;
 			children = (
+				3EA421581F1CC8DD007F01A8 /* Swift */,
 				3E205A0C1EF2EE170021A966 /* GCD+LXExtension.h */,
 				3E205A0D1EF2EE170021A966 /* GCD+LXExtension.m */,
 				3E205A0E1EF2EE170021A966 /* LXIntrospection */,
@@ -517,6 +522,7 @@
 				3E205A3D1EF2EE170021A966 /* CATransform3D+LXExtension.swift */,
 				3E205A3E1EF2EE170021A966 /* CGAffineTransform+LXExtension.swift */,
 				3E205A3F1EF2EE170021A966 /* CGGeometry+LXExtension.swift */,
+				3E75E6AF1F17F06800259815 /* CLLocation+LXExtension.swift */,
 				3E205A401EF2EE170021A966 /* UIView+LXExtension.swift */,
 			);
 			path = Swift;
@@ -605,8 +611,9 @@
 			isa = PBXGroup;
 			children = (
 				3E2059251EF2E9ED0021A966 /* HomeDrawerView.swift */,
-				3E3F9C8C1F0F754200EA7FDF /* HomeAnchorView.swift */,
-				3E3F9C8E1F0F901500EA7FDF /* NearbyBikeAnnotationView.swift */,
+				3E3F9C8E1F0F901500EA7FDF /* BikeAnnotationView.swift */,
+				3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */,
+				3E39DBDB1F1D1078008DFB2B /* AnchorAnnotationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -623,8 +630,18 @@
 			isa = PBXGroup;
 			children = (
 				3E75E6AD1F17D38700259815 /* NavigationRoute.swift */,
+				3E39DBD91F1D0B08008DFB2B /* AnchorAnnotation.swift */,
+				3E14EF391F1DECA2003BB88B /* BikeAnnotationCollection.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3EA421581F1CC8DD007F01A8 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				3EA421591F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift */,
+			);
+			path = Swift;
 			sourceTree = "<group>";
 		};
 		3EEC9FBB1EF15DC000B0FC80 = {
@@ -746,6 +763,7 @@
 				3E205A8D1EF2EE170021A966 /* MBProgressHUD+LXExtension.xcassets in Resources */,
 				3E2059301EF2E9ED0021A966 /* Home.storyboard in Resources */,
 				3E4C51D41F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx in Resources */,
+				3ECE67961F18266C0060399A /* BikeAnnotationCalloutView.xib in Resources */,
 				3E20592E1EF2E9ED0021A966 /* Gift.storyboard in Resources */,
 				3E2059F31EF2EA5D0021A966 /* Assets.xcassets in Resources */,
 				3E230A821EF9729E003CB963 /* User.storyboard in Resources */,
@@ -821,7 +839,7 @@
 				3E205A791EF2EE170021A966 /* LXMulticastDelegate.m in Sources */,
 				3E397AB01F15354200BCB8A2 /* MBProgressHUD+LXExtension.swift in Sources */,
 				3E205AA21EF2EE170021A966 /* UIScreen+LXExtension.m in Sources */,
-				3E75E6B21F17FB5200259815 /* MAPolyline+LXExtension.swift in Sources */,
+				3E75E6B21F17FB5200259815 /* AMap+LXExtension.swift in Sources */,
 				3E205AA01EF2EE170021A966 /* UIImage+LXExtension.m in Sources */,
 				3E205A7C1EF2EE170021A966 /* GCD+LXExtension.m in Sources */,
 				3E205A741EF2EE170021A966 /* LXDynamicTypeManager.m in Sources */,
@@ -837,6 +855,7 @@
 				3E205A861EF2EE170021A966 /* NSNotificationCenter+LXExtension.m in Sources */,
 				3E205A731EF2EE170021A966 /* LXCoreDataController.m in Sources */,
 				3E205A811EF2EE170021A966 /* NSData+LXExtension.m in Sources */,
+				3E14EF3A1F1DECA2003BB88B /* BikeAnnotationCollection.swift in Sources */,
 				3E75E6B01F17F06800259815 /* CLLocation+LXExtension.swift in Sources */,
 				3E230A851EF97E34003CB963 /* UserCenterContainerViewController.swift in Sources */,
 				3E20592F1EF2E9ED0021A966 /* GiftViewController.swift in Sources */,
@@ -849,6 +868,7 @@
 				3E205A831EF2EE170021A966 /* NSDictionary+LXExtension.m in Sources */,
 				3E205A971EF2EE170021A966 /* UIView+LXExtension.swift in Sources */,
 				3E205A941EF2EE170021A966 /* CATransform3D+LXExtension.swift in Sources */,
+				3E39DBDC1F1D1078008DFB2B /* AnchorAnnotationView.swift in Sources */,
 				3E2059351EF2E9ED0021A966 /* AppDelegate.swift in Sources */,
 				3E205A911EF2EE170021A966 /* CAAnimation+LXExtension.swift in Sources */,
 				3E205A9C1EF2EE170021A966 /* UICollectionViewCell+LXExtension.m in Sources */,
@@ -858,8 +878,7 @@
 				3E205A851EF2EE170021A966 /* NSManagedObjectModel+LXExtension.m in Sources */,
 				3E230A8E1EF99AF6003CB963 /* PresentUserCenterAnimator.swift in Sources */,
 				3E205A931EF2EE170021A966 /* CATransaction+LXExtension.swift in Sources */,
-				3E3F9C8F1F0F901500EA7FDF /* NearbyBikeAnnotationView.swift in Sources */,
-				3E7E2A301F154DF50020BD07 /* NSObjectProtocol+LXExtension.swift in Sources */,
+				3E3F9C8F1F0F901500EA7FDF /* BikeAnnotationView.swift in Sources */,
 				3E205AA41EF2EE170021A966 /* UISearchBar+LXExtension.m in Sources */,
 				3E205A881EF2EE170021A966 /* NSString+LXExtension.m in Sources */,
 				3E230A8B1EF99653003CB963 /* UserCenterSegue.swift in Sources */,
@@ -871,8 +890,8 @@
 				3E205A9A1EF2EE170021A966 /* UIButton+LXExtension.m in Sources */,
 				3E205A8F1EF2EE170021A966 /* CATransaction+LXExtension.m in Sources */,
 				3E205A751EF2EE170021A966 /* LXImagePicker.m in Sources */,
+				3EA4215A1F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift in Sources */,
 				3E205A8B1EF2EE170021A966 /* LXRingAnimatedView.m in Sources */,
-				3E3F9C8D1F0F754200EA7FDF /* HomeAnchorView.swift in Sources */,
 				3E205AA81EF2EE170021A966 /* UITextView+LXExtension.m in Sources */,
 				3E2670521EFBD01000FB76A0 /* WebViewController.swift in Sources */,
 				3E205AAC1EF2EE170021A966 /* UIWindow+LXExtension.m in Sources */,
@@ -881,6 +900,7 @@
 				3E205AA91EF2EE170021A966 /* UIView+LXExtension.m in Sources */,
 				3E205A9E1EF2EE170021A966 /* UIDevice+LXExtension.m in Sources */,
 				3E230A931EF9B251003CB963 /* UserCenterViewController.swift in Sources */,
+				3E39DBDA1F1D0B08008DFB2B /* AnchorAnnotation.swift in Sources */,
 				3E230A911EF9AB7B003CB963 /* DismissUserCenterAnimator.swift in Sources */,
 				3E205A921EF2EE170021A966 /* CALayer+LXExtension.swift in Sources */,
 				3E205A951EF2EE170021A966 /* CGAffineTransform+LXExtension.swift in Sources */,

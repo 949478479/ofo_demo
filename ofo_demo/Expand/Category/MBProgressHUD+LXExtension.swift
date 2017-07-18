@@ -8,11 +8,11 @@
 
 import MBProgressHUD
 
-extension Swifty where Base == MBProgressHUD.Type {
+extension Swifty where Base: MBProgressHUD {
 	
 	@discardableResult
-	func showActivityIndicator(with status: String) -> MBProgressHUD {
-		let hud = base.showAdded(to: UIWindow.lx_key(), animated: true)
+	static func showActivityIndicator(withStatus status: String) -> MBProgressHUD {
+		let hud = MBProgressHUD.showAdded(to: UIWindow.lx_key(), animated: true)
 		hud.margin = 8
 		hud.isSquare = true
 		hud.label.text = status
@@ -28,11 +28,11 @@ extension Swifty where Base == MBProgressHUD.Type {
 	}
 	
 	@discardableResult
-	func showRoutePlanIndicator() -> MBProgressHUD {
-		return showActivityIndicator(with: "路径规划中...")
+	static func showRoutePlanIndicator() -> MBProgressHUD {
+		return showActivityIndicator(withStatus: "路径规划中...")
 	}
 
-	func hiden(animated: Bool) {
-		base.hide(for: UIWindow.lx_key(), animated: animated)
+	static func hiden(animated: Bool) {
+		MBProgressHUD.hide(for: UIWindow.lx_key(), animated: animated)
 	}
 }

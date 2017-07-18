@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BikeAnnotationView" customModule="ofo_demo" customModuleProvider="target">
+            <connections>
+                <outlet property="distanceLabel" destination="7zj-B5-Bwu" id="uPH-Bs-3ug"/>
+                <outlet property="durationLabel" destination="D6t-Vx-mfy" id="i5D-Hu-cJT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="iN0-l3-epB" userLabel="Callout View" customClass="BikeAnnotationCalloutView" customModule="ofo_demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="104" height="51"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Homepage_callout" translatesAutoresizingMaskIntoConstraints="NO" id="9Lp-ww-XqP">
+                    <rect key="frame" x="0.0" y="0.0" width="104" height="51"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8MH-83-YiO">
+                    <rect key="frame" x="0.0" y="3.5" width="104" height="36"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6t-Vx-mfy">
+                            <rect key="frame" x="0.0" y="0.0" width="104" height="18"/>
+                            <attributedString key="attributedText">
+                                <fragment content="步行 ">
+                                    <attributes>
+                                        <font key="NSFont" size="10" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="2 ">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="分钟">
+                                    <attributes>
+                                        <font key="NSFont" size="10" name=".PingFangSC-Regular"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距离 233 米" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zj-B5-Bwu">
+                            <rect key="frame" x="0.0" y="18" width="104" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="9Lp-ww-XqP" secondAttribute="trailing" id="CLH-mg-KB9"/>
+                <constraint firstItem="8MH-83-YiO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ciw-XD-75K"/>
+                <constraint firstAttribute="bottom" secondItem="9Lp-ww-XqP" secondAttribute="bottom" id="KC2-3c-Hcb"/>
+                <constraint firstAttribute="trailing" secondItem="8MH-83-YiO" secondAttribute="trailing" id="RZD-9k-Kgs"/>
+                <constraint firstItem="9Lp-ww-XqP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="blL-Wx-APn"/>
+                <constraint firstItem="8MH-83-YiO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-4" id="iXr-gW-aEt"/>
+                <constraint firstItem="9Lp-ww-XqP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ik7-g1-wHK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="26" y="53"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Homepage_callout" width="104" height="51"/>
+    </resources>
+</document>

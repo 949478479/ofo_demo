@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lZy-2x-6mt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lZy-2x-6mt">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -116,15 +115,10 @@
                                     <outletCollection property="gestureRecognizers" destination="5PQ-2K-3A1" appends="YES" id="aGf-ok-gZZ"/>
                                 </connections>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homePage_wholeAnchor" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-Db-k5a" customClass="HomeAnchorView" customModule="ofo_demo" customModuleProvider="target">
-                                <rect key="frame" x="148" y="176" width="24" height="37"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EeD-hf-K9q" firstAttribute="leading" secondItem="72t-cD-neA" secondAttribute="leading" id="9Qn-pC-lDe"/>
-                            <constraint firstItem="t2U-Db-k5a" firstAttribute="centerX" secondItem="72t-cD-neA" secondAttribute="centerX" id="Bx1-u1-mmN"/>
-                            <constraint firstItem="t2U-Db-k5a" firstAttribute="bottom" secondItem="72t-cD-neA" secondAttribute="centerY" multiplier="0.75" id="LDO-dr-bbU"/>
                             <constraint firstAttribute="trailing" secondItem="EeD-hf-K9q" secondAttribute="trailing" id="w6y-hX-P02"/>
                             <constraint firstAttribute="bottom" secondItem="EeD-hf-K9q" secondAttribute="top" constant="263" id="zs0-Aw-JZe"/>
                         </constraints>
@@ -152,9 +146,6 @@
                             </constraints>
                         </view>
                     </navigationItem>
-                    <connections>
-                        <outlet property="anchorView" destination="t2U-Db-k5a" id="jwQ-rq-Vas"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSN-4Z-4AS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="up" id="BpH-fF-oh0">
@@ -208,7 +199,6 @@
     <resources>
         <image name="arrowup" width="13" height="8"/>
         <image name="gift_icon" width="25" height="25"/>
-        <image name="homePage_wholeAnchor" width="24" height="37"/>
         <image name="home_scan_icon" width="30" height="31"/>
         <image name="user_center_icon" width="25" height="25"/>
         <image name="yellowBikeLogo" width="128" height="27"/>
