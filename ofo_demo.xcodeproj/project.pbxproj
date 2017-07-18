@@ -11,7 +11,6 @@
 		3E14EF3A1F1DECA2003BB88B /* BikeAnnotationCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14EF391F1DECA2003BB88B /* BikeAnnotationCollection.swift */; };
 		3E20592E1EF2E9ED0021A966 /* Gift.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2059211EF2E9ED0021A966 /* Gift.storyboard */; };
 		3E20592F1EF2E9ED0021A966 /* GiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2059221EF2E9ED0021A966 /* GiftViewController.swift */; };
-		3E2059301EF2E9ED0021A966 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2059241EF2E9ED0021A966 /* Home.storyboard */; };
 		3E2059311EF2E9ED0021A966 /* HomeDrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2059251EF2E9ED0021A966 /* HomeDrawerView.swift */; };
 		3E2059321EF2E9ED0021A966 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2059261EF2E9ED0021A966 /* HomeViewController.swift */; };
 		3E2059331EF2E9ED0021A966 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E2059281EF2E9ED0021A966 /* Login.storyboard */; };
@@ -99,6 +98,7 @@
 		3EA4215A1F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA421591F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift */; };
 		3ECE67961F18266C0060399A /* BikeAnnotationCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */; };
 		3ED523411F1E0E5800142291 /* UserProfileBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED523401F1E0E5800142291 /* UserProfileBackgroundView.swift */; };
+		3ED523431F1E16BC00142291 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ED523421F1E161F00142291 /* Home.storyboard */; };
 		3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +106,6 @@
 		3E14EF391F1DECA2003BB88B /* BikeAnnotationCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeAnnotationCollection.swift; sourceTree = "<group>"; };
 		3E2059211EF2E9ED0021A966 /* Gift.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Gift.storyboard; sourceTree = "<group>"; };
 		3E2059221EF2E9ED0021A966 /* GiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewController.swift; sourceTree = "<group>"; };
-		3E2059241EF2E9ED0021A966 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3E2059251EF2E9ED0021A966 /* HomeDrawerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDrawerView.swift; sourceTree = "<group>"; };
 		3E2059261EF2E9ED0021A966 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3E2059281EF2E9ED0021A966 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -251,6 +250,7 @@
 		3EA421591F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+LXExtension.swift"; sourceTree = "<group>"; };
 		3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeAnnotationCalloutView.xib; sourceTree = "<group>"; };
 		3ED523401F1E0E5800142291 /* UserProfileBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileBackgroundView.swift; sourceTree = "<group>"; };
+		3ED523421F1E161F00142291 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3EEC9FC41EF15DC000B0FC80 /* ofo_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
 		51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -304,7 +304,7 @@
 		3E2059231EF2E9ED0021A966 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3E2059241EF2E9ED0021A966 /* Home.storyboard */,
+				3ED523421F1E161F00142291 /* Home.storyboard */,
 				3E75E6AC1F17D37200259815 /* Model */,
 				3E3F9C8A1F0F749C00EA7FDF /* View */,
 				3E3F9C8B1F0F74AA00EA7FDF /* Controller */,
@@ -764,8 +764,8 @@
 			files = (
 				3E2059331EF2E9ED0021A966 /* Login.storyboard in Resources */,
 				3E205A8D1EF2EE170021A966 /* MBProgressHUD+LXExtension.xcassets in Resources */,
-				3E2059301EF2E9ED0021A966 /* Home.storyboard in Resources */,
 				3E4C51D41F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx in Resources */,
+				3ED523431F1E16BC00142291 /* Home.storyboard in Resources */,
 				3ECE67961F18266C0060399A /* BikeAnnotationCalloutView.xib in Resources */,
 				3E20592E1EF2E9ED0021A966 /* Gift.storyboard in Resources */,
 				3E2059F31EF2EA5D0021A966 /* Assets.xcassets in Resources */,
