@@ -34,6 +34,7 @@ extension HomeDrawerView {
 		path.addQuadCurve(to: CGPoint(x: rect.maxX, y: arcHight), control: CGPoint(x: rect.midX, y: -arcHight))
 
 		layer.shadowPath = path
+		layer.shadowRadius = 7
 		layer.shadowOpacity = 0.1
 
 		path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
