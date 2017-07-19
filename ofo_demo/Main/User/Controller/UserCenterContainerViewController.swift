@@ -26,22 +26,11 @@ class UserCenterContainerViewController: UIViewController {
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		hideNavigationBar() // 隐藏系统导航栏，否则叉叉按钮无法点击了
+		lx.hideNavigationBar() // 隐藏系统导航栏，否则叉叉按钮无法点击了
 	}
 
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
-		showNavigationBar() // 显示系统导航栏，否则系统的返回按钮不能用了
-	}
-}
-
-private extension UserCenterContainerViewController {
-
-	func showNavigationBar() {
-		navigationController?.isNavigationBarHidden = false
-	}
-
-	func hideNavigationBar() {
-		navigationController?.isNavigationBarHidden = true
+		lx.showNavigationBar() // 显示系统导航栏，否则系统的返回按钮不能用了
 	}
 }

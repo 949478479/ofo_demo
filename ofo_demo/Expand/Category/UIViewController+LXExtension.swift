@@ -9,9 +9,18 @@
 import UIKit
 
 extension Swifty where Base: UIViewController {
+
 	func setNavigationBarTranslucent() {
 		let navigationBar = base.lx_navigationBar()
 		navigationBar?.shadowImage = UIImage()
 		navigationBar?.setBackgroundImage(UIImage(), for: .default)
+	}
+
+	func showNavigationBar() {
+		base.navigationController?.isNavigationBarHidden = false
+	}
+
+	func hideNavigationBar() {
+		base.navigationController?.isNavigationBarHidden = true
 	}
 }

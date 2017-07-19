@@ -40,6 +40,13 @@ class HomeViewController: UIViewController {
 
 // MARK: - seuge
 extension HomeViewController {
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let destination = segue.destination as? ReportCenterViewController {
+			destination.delegate = self
+		}
+	}
+
 	@IBAction private func unwind(for unwindSegue: UIStoryboardSegue) {}
 }
 
@@ -362,5 +369,15 @@ extension HomeViewController: AMapSearchDelegate {
 		} else {
 			endRoutePlanModeIfNeeded()
 		}
+	}
+}
+
+extension HomeViewController: ReportCenterViewControllerDelegate {
+
+	func reportCenterViewController(_ reportCenterViewController: ReportCenterViewController, didTapReportButtonFor reportType: ReportType) {
+		reportCenterViewController.dismiss(animated: false, completion: nil)
+		let webViewController = WebViewController()
+		webViewController.title = reportType.title
+		show(webViewController, sender: self)
 	}
 }
