@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Delegate-->
         <scene sceneID="hnD-r0-HoL">
             <objects>
                 <viewController id="gR4-Ye-HQE" customClass="HomeViewController" customModule="ofo_demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,7 +166,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="fUa-4Z-ZRw" kind="presentation" customClass="ReportCenterSegue" customModule="ofo_demo" customModuleProvider="target" modalPresentationStyle="overFullScreen" id="Zkb-pY-94m"/>
+                                            <action selector="reportButtonDidTap:" destination="gR4-Ye-HQE" eventType="touchUpInside" id="yNP-HR-cFo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nag-dR-Lcu" customClass="HomeLocationButton" customModule="ofo_demo">
@@ -209,9 +209,156 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="locationButton" destination="Nag-dR-Lcu" id="eg0-yP-g54"/>
+                        <outlet property="reportMenu" destination="DQV-Aa-WSI" id="bZh-Ij-NYV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QSN-4Z-4AS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="DQV-Aa-WSI" customClass="ReportMenuView" customModule="ofo_demo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOK-wc-dE1">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7Ag-lu-ynW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="dHX-4Z-JCx">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="THE-rQ-7N2">
+                                                <rect key="frame" x="40" y="150" width="240" height="268"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="y7h-q0-UXp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="124"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kgH-Ve-QRI">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftn-qv-fm3">
+                                                                        <rect key="frame" x="7" y="0.0" width="106" height="106"/>
+                                                                        <state key="normal" image="report_park"/>
+                                                                        <connections>
+                                                                            <action selector="reportButtonDidTap:" destination="DQV-Aa-WSI" eventType="touchUpInside" id="Y6k-YO-9fY"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乱停车" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFK-uM-E8T">
+                                                                        <rect key="frame" x="37" y="106" width="46" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8Nz-Gm-IsI">
+                                                                <rect key="frame" x="120" y="0.0" width="120" height="124"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHi-mQ-fMH">
+                                                                        <rect key="frame" x="7" y="0.0" width="106" height="106"/>
+                                                                        <state key="normal" image="report_nobike"/>
+                                                                        <connections>
+                                                                            <action selector="reportButtonDidTap:" destination="DQV-Aa-WSI" eventType="touchUpInside" id="Ypg-54-9hz"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="没车用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="550-WN-EaC">
+                                                                        <rect key="frame" x="37" y="106" width="46" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NGP-uH-RhA">
+                                                        <rect key="frame" x="0.0" y="144" width="240" height="124"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QMg-fk-Yx2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="120" height="124"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fln-Fo-5Ei">
+                                                                        <rect key="frame" x="7" y="0.0" width="106" height="106"/>
+                                                                        <state key="normal" image="report_broken"/>
+                                                                        <connections>
+                                                                            <action selector="reportButtonDidTap:" destination="DQV-Aa-WSI" eventType="touchUpInside" id="Vln-TQ-98S"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车损坏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5B-D0-A7p">
+                                                                        <rect key="frame" x="37" y="106" width="46" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Twr-F7-nEH">
+                                                                <rect key="frame" x="120" y="0.0" width="120" height="124"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OC4-75-Rhs">
+                                                                        <rect key="frame" x="7" y="0.0" width="106" height="106"/>
+                                                                        <state key="normal" image="report_locked"/>
+                                                                        <connections>
+                                                                            <action selector="reportButtonDidTap:" destination="DQV-Aa-WSI" eventType="touchUpInside" id="jHT-xG-jbB"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车上锁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAl-5a-NLy">
+                                                                        <rect key="frame" x="37" y="106" width="46" height="18"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d6-vJ-kzm">
+                                                <rect key="frame" x="282" y="27" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Gc3-Ab-dht"/>
+                                                    <constraint firstAttribute="width" constant="30" id="q5c-Au-Xtb"/>
+                                                </constraints>
+                                                <state key="normal" image="closeFork"/>
+                                                <connections>
+                                                    <action selector="dismissWithAnimated:" destination="DQV-Aa-WSI" eventType="touchUpInside" id="ys2-hb-mq9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="0d6-vJ-kzm" firstAttribute="top" secondItem="dHX-4Z-JCx" secondAttribute="top" constant="27" id="DsD-P0-0aI"/>
+                                            <constraint firstAttribute="trailing" secondItem="0d6-vJ-kzm" secondAttribute="trailing" constant="8" id="LZP-r7-29W"/>
+                                            <constraint firstAttribute="trailing" secondItem="THE-rQ-7N2" secondAttribute="trailing" constant="40" id="Yku-Wl-fGx"/>
+                                            <constraint firstItem="THE-rQ-7N2" firstAttribute="leading" secondItem="dHX-4Z-JCx" secondAttribute="leading" constant="40" id="Z0L-mh-F4B"/>
+                                            <constraint firstItem="THE-rQ-7N2" firstAttribute="centerY" secondItem="dHX-4Z-JCx" secondAttribute="centerY" id="jOP-tM-Cda"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dHX-4Z-JCx" firstAttribute="top" secondItem="7Ag-lu-ynW" secondAttribute="top" id="XyC-Pi-PAy"/>
+                                    <constraint firstAttribute="bottom" secondItem="dHX-4Z-JCx" secondAttribute="bottom" id="gJ9-bY-4ey"/>
+                                    <constraint firstItem="dHX-4Z-JCx" firstAttribute="leading" secondItem="7Ag-lu-ynW" secondAttribute="leading" id="t00-Is-g6l"/>
+                                    <constraint firstAttribute="trailing" secondItem="dHX-4Z-JCx" secondAttribute="trailing" id="wFO-Qe-xu7"/>
+                                </constraints>
+                            </view>
+                            <blurEffect style="light"/>
+                        </visualEffectView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.74903681509999998" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="VOK-wc-dE1" secondAttribute="trailing" id="5nU-PD-ngY"/>
+                        <constraint firstItem="VOK-wc-dE1" firstAttribute="leading" secondItem="DQV-Aa-WSI" secondAttribute="leading" id="CQu-oF-39q"/>
+                        <constraint firstAttribute="bottom" secondItem="VOK-wc-dE1" secondAttribute="bottom" id="O3d-GY-mp5"/>
+                        <constraint firstItem="VOK-wc-dE1" firstAttribute="top" secondItem="DQV-Aa-WSI" secondAttribute="top" id="RjD-gy-RC2"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="gR4-Ye-HQE" id="6Bd-Ep-Bc3"/>
+                        <outletCollection property="reportButtonContainers" destination="kgH-Ve-QRI" collectionClass="NSMutableArray" id="lM8-Pp-Vhq"/>
+                        <outletCollection property="reportButtonContainers" destination="8Nz-Gm-IsI" collectionClass="NSMutableArray" id="ssE-bg-IGG"/>
+                        <outletCollection property="reportButtonContainers" destination="QMg-fk-Yx2" collectionClass="NSMutableArray" id="d8C-WU-EQS"/>
+                        <outletCollection property="reportButtonContainers" destination="Twr-F7-nEH" collectionClass="NSMutableArray" id="Pg9-oJ-0ve"/>
+                    </connections>
+                </view>
                 <swipeGestureRecognizer direction="up" id="BpH-fF-oh0">
                     <connections>
                         <action selector="open" destination="EeD-hf-K9q" id="L6c-6r-eSu"/>
@@ -225,21 +372,13 @@
             </objects>
             <point key="canvasLocation" x="532.5" y="5.28169014084507"/>
         </scene>
-        <!--Report-->
-        <scene sceneID="0Z7-Ym-7Rb">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Report" id="fUa-4Z-ZRw" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4fo-lw-4Yx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1210" y="-21"/>
-        </scene>
         <!--Gift-->
         <scene sceneID="MHj-ax-DNG">
             <objects>
                 <viewControllerPlaceholder storyboardName="Gift" id="cat-hN-BXR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DI8-Q8-P7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="292"/>
+            <point key="canvasLocation" x="781" y="480"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lKV-Se-NG7">
@@ -270,10 +409,15 @@
     </scenes>
     <resources>
         <image name="arrowup" width="13" height="8"/>
+        <image name="closeFork" width="15" height="15"/>
         <image name="gift_icon" width="25" height="25"/>
         <image name="home_scan_icon" width="30" height="31"/>
         <image name="leftBottomBackgroundImage" width="40" height="40"/>
         <image name="leftBottomRefreshImage" width="40" height="40"/>
+        <image name="report_broken" width="106" height="106"/>
+        <image name="report_locked" width="106" height="106"/>
+        <image name="report_nobike" width="106" height="106"/>
+        <image name="report_park" width="106" height="106"/>
         <image name="rightBottomImage" width="40" height="40"/>
         <image name="user_center_icon" width="25" height="25"/>
         <image name="whiteImage" width="375" height="125"/>

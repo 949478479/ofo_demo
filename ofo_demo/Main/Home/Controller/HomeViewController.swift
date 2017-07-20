@@ -11,6 +11,7 @@ import MBProgressHUD
 
 class HomeViewController: UIViewController {
 
+	@IBOutlet private var reportMenu: ReportMenuView!
 	@IBOutlet private var locationButton: HomeLocationButton!
 
 	private let mapView = MAMapView()
@@ -40,18 +41,15 @@ class HomeViewController: UIViewController {
 
 // MARK: - seuge
 extension HomeViewController {
-
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if let destination = segue.destination as? ReportCenterViewController {
-			destination.delegate = self
-		}
-	}
-
 	@IBAction private func unwind(for unwindSegue: UIStoryboardSegue) {}
 }
 
 // MARK: - 悬浮按钮
 private extension HomeViewController {
+
+	@IBAction private func reportButtonDidTap(_ sender: UIButton) {
+		reportMenu.show()
+	}
 
 	@IBAction private func locationButtonDidTap(_ sender: HomeLocationButton) {
 		guard !sender.isRefreshing else { return }
@@ -357,10 +355,10 @@ extension HomeViewController: AMapSearchDelegate {
 }
 
 // MARK: - ReportCenterViewControllerDelegate
-extension HomeViewController: ReportCenterViewControllerDelegate {
+extension HomeViewController: ReportMenuViewDelegate {
 
-	func reportCenterViewController(_ reportCenterViewController: ReportCenterViewController, didTapReportButtonFor reportType: ReportType) {
-		reportCenterViewController.dismiss(animated: false, completion: nil)
+	func reportMenuView(_ reportMenuView: ReportMenuView, didTapReportButtonFor reportType: ReportType) {
+		reportMenuView.dismiss(animated: false)
 		let webViewController = WebViewController()
 		webViewController.title = reportType.title
 		show(webViewController, sender: self)

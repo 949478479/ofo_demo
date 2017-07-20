@@ -12,7 +12,7 @@ extension Swifty where Base: MBProgressHUD {
 	
 	@discardableResult
 	static func showActivityIndicator(withStatus status: String) -> MBProgressHUD {
-		let hud = MBProgressHUD.showAdded(to: UIWindow.lx_key(), animated: true)
+		let hud = MBProgressHUD.showAdded(to: UIWindow.lx.key, animated: true)
 		hud.margin = 8
 		hud.isSquare = true
 		hud.label.text = status
@@ -33,7 +33,7 @@ extension Swifty where Base: MBProgressHUD {
 	}
 
 	static func hide(animated: Bool = true) {
-		MBProgressHUD.hide(for: UIWindow.lx_key(), animated: animated)
+		MBProgressHUD.hide(for: UIWindow.lx.key, animated: animated)
 	}
 
 	func hide(animated: Bool = true) {
