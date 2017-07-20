@@ -105,6 +105,7 @@
 		3ED5234E1F1F95EF00142291 /* PresentReportCenterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED5234D1F1F95EF00142291 /* PresentReportCenterAnimator.swift */; };
 		3ED523511F1F96E600142291 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ED523501F1F96E600142291 /* Report.storyboard */; };
 		3ED523551F1FA0A800142291 /* DismissReportCenterAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED523541F1FA0A700142291 /* DismissReportCenterAnimator.swift */; };
+		3ED523571F204AE600142291 /* MapSearchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED523561F204AE600142291 /* MapSearchor.swift */; };
 		3EEC9FDD1EF16B4F00B0FC80 /* loginVideoV2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */; };
 /* End PBXBuildFile section */
 
@@ -263,6 +264,7 @@
 		3ED5234D1F1F95EF00142291 /* PresentReportCenterAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentReportCenterAnimator.swift; sourceTree = "<group>"; };
 		3ED523501F1F96E600142291 /* Report.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		3ED523541F1FA0A700142291 /* DismissReportCenterAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissReportCenterAnimator.swift; sourceTree = "<group>"; };
+		3ED523561F204AE600142291 /* MapSearchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchor.swift; sourceTree = "<group>"; };
 		3EEC9FC41EF15DC000B0FC80 /* ofo_demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofo_demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EEC9FDC1EF16B4F00B0FC80 /* loginVideoV2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideoV2.mp4; sourceTree = "<group>"; };
 		51DC8E1A76CEF7482560DCA6 /* Pods_ofo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ofo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -628,9 +630,9 @@
 			children = (
 				3E2059251EF2E9ED0021A966 /* HomeDrawerView.swift */,
 				3ED523441F1E491F00142291 /* HomeLocationButton.swift */,
+				3E39DBDB1F1D1078008DFB2B /* AnchorAnnotationView.swift */,
 				3E3F9C8E1F0F901500EA7FDF /* BikeAnnotationView.swift */,
 				3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */,
-				3E39DBDB1F1D1078008DFB2B /* AnchorAnnotationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -646,6 +648,7 @@
 		3E75E6AC1F17D37200259815 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3ED523561F204AE600142291 /* MapSearchor.swift */,
 				3E75E6AD1F17D38700259815 /* NavigationRoute.swift */,
 				3E39DBD91F1D0B08008DFB2B /* AnchorAnnotation.swift */,
 				3E14EF391F1DECA2003BB88B /* BikeAnnotationCollection.swift */,
@@ -906,6 +909,7 @@
 				3E205A871EF2EE170021A966 /* NSObject+LXExtension.m in Sources */,
 				3E205A901EF2EE170021A966 /* NSLayoutConstraint+LXExtension.m in Sources */,
 				3E2059311EF2E9ED0021A966 /* HomeDrawerView.swift in Sources */,
+				3ED523571F204AE600142291 /* MapSearchor.swift in Sources */,
 				3E205AA71EF2EE170021A966 /* UITextField+LXExtension.m in Sources */,
 				3E205A761EF2EE170021A966 /* LXKeyboardSpacingView.m in Sources */,
 				3E205A781EF2EE170021A966 /* LXMigrationManager.m in Sources */,

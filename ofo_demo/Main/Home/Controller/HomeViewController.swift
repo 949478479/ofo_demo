@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
 	@IBOutlet private var locationButton: HomeLocationButton!
 
 	private let mapView = MAMapView()
-	private let searchAPI = AMapSearchAPI()!
+	private let mapSearchor = MapSearchor()
 
 	private var didUpdateUserLocation = false
 	private var userLocationView: MAAnnotationView?
@@ -33,8 +33,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		configureMapView()
-		configureSearchAPI()
         lx.setNavigationBarTranslucent()
+		mapSearchor.searchAPI.delegate = self
 	}
 }
 
@@ -178,6 +178,27 @@ private extension HomeViewController {
 	}
 }
 
+// MARK: - 搜索
+private extension HomeViewController {
+
+	func satisfyAnchorMovementThreshold() -> Bool {
+		let p1 = MAMapPointForCoordinate(previousSearchCoordinate)
+		let p2 = MAMapPointForCoordinate(previousAnchorCoordinate)
+		let distance = MAMetersBetweenMapPoints(p1, p2)
+		return distance > 10
+	}
+
+	func performPOIAroundSearch() {
+		previousSearchCoordinate = previousAnchorCoordinate
+		mapSearchor.performPOIAroundSearch(for: previousSearchCoordinate)
+	}
+
+	func performWalkingRouteSearch(for destination: CLLocationCoordinate2D) {
+		routePlanIndicator = MBProgressHUD.lx.showRoutePlanIndicator()
+		mapSearchor.performWalkingRouteSearch(for: previousAnchorCoordinate, destination: destination)
+	}
+}
+
 // MARK: - 路径规划
 private extension HomeViewController {
 
@@ -224,47 +245,10 @@ private extension HomeViewController {
 	}
 }
 
-// MARK: - 搜索
-private extension HomeViewController {
-
-	func configureSearchAPI() {
-		searchAPI.delegate = self
-	}
-
-	func satisfyAnchorMovementThreshold() -> Bool {
-		let p1 = MAMapPointForCoordinate(previousSearchCoordinate)
-		let p2 = MAMapPointForCoordinate(previousAnchorCoordinate)
-		let distance = MAMetersBetweenMapPoints(p1, p2)
-		return distance > 10
-	}
-
-	func performPOIAroundSearch() {
-		let request = AMapPOIAroundSearchRequest()
-		request.radius = 200
-		request.types = "餐饮服务"
-		let centerCoordinate = previousAnchorCoordinate
-		request.location = AMapGeoPoint.lx.location(with: centerCoordinate)
-		searchAPI.aMapPOIAroundSearch(request)
-		previousSearchCoordinate = centerCoordinate
-	}
-
-	func performWalkingRouteSearch(for destination: CLLocationCoordinate2D) {
-		let origin = AMapGeoPoint.lx.location(with: previousAnchorCoordinate)
-		let destination = AMapGeoPoint.lx.location(with: destination)
-
-		let request = AMapWalkingRouteSearchRequest()
-		request.origin = origin
-		request.destination = destination
-
-		routePlanIndicator = MBProgressHUD.lx.showRoutePlanIndicator()
-		searchAPI.aMapWalkingRouteSearch(request)
-	}
-}
-
 // MARK: - MAMapViewDelegate
 extension HomeViewController: MAMapViewDelegate {
 
-	// MARK: - 定位
+	// MARK: 定位
 	func mapView(_ mapView: MAMapView!, didFailToLocateUserWithError error: Error!) {
 		printLog("\(error)")
 	}
@@ -281,12 +265,12 @@ extension HomeViewController: MAMapViewDelegate {
 		}
 	}
 
-	// MARK: - 点击
+	// MARK: 点击
 	func mapView(_ mapView: MAMapView!, didSingleTappedAt coordinate: CLLocationCoordinate2D) {
 		endRoutePlanModeIfNeeded()
 	}
 
-	// MARK: - 拖拽
+	// MARK: 拖拽
 	func mapView(_ mapView: MAMapView!, mapDidMoveByUser wasUserAction: Bool) {
 		guard wasUserAction else { return }
 
@@ -303,7 +287,7 @@ extension HomeViewController: MAMapViewDelegate {
 		}
 	}
 
-	// MARK: - 点标记
+	// MARK: 点标记
 	func mapView(_ mapView: MAMapView!, didAddAnnotationViews views: [Any]!) {
 		configureUserLocationViewIfNeeded()
 		bringUserLocationViewToFont()
@@ -329,7 +313,7 @@ extension HomeViewController: MAMapViewDelegate {
 		return annotationView
 	}
 
-	// MARK: - 折线
+	// MARK: 折线
 	func mapView(_ mapView: MAMapView!, rendererFor overlay: MAOverlay!) -> MAOverlayRenderer! {
 		guard let polyline = overlay as? RoutePolyline else {
 			return nil
@@ -352,7 +336,7 @@ extension HomeViewController: AMapSearchDelegate {
 		printLog("\(error)")
 	}
 
-	// MARK: - 兴趣点
+	// MARK: 兴趣点
 	func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
 		locationButton.stopRefreshAnimation()
 		removeBikeAnnotationsIfNeeded()
@@ -361,7 +345,7 @@ extension HomeViewController: AMapSearchDelegate {
 		}
 	}
 
-	// MARK: - 路径规划
+	// MARK: 路径规划
 	func onRouteSearchDone(_ request: AMapRouteSearchBaseRequest!, response: AMapRouteSearchResponse!) {
 		routePlanIndicator?.lx.hide()
 		if response.count > 0 {
@@ -372,6 +356,7 @@ extension HomeViewController: AMapSearchDelegate {
 	}
 }
 
+// MARK: - ReportCenterViewControllerDelegate
 extension HomeViewController: ReportCenterViewControllerDelegate {
 
 	func reportCenterViewController(_ reportCenterViewController: ReportCenterViewController, didTapReportButtonFor reportType: ReportType) {
