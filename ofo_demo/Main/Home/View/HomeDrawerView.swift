@@ -10,16 +10,16 @@ import UIKit
 
 class HomeDrawerView: UIView {
 
-	var arcHight: CGFloat = 40
-    var heightOnClose: CGFloat = 68
+	let arcHight: CGFloat = 40
+    let heightOnClose: CGFloat = 68
 	@IBOutlet private var topConstraint: NSLayoutConstraint! {
 		didSet {
 			topConstraint.constant = heightOnClose
 		}
 	}
 
-	var startButtonTopConstantOnOpen: CGFloat = 40
-	var startButtonTopConstantOnClose: CGFloat = 60
+	let startButtonTopConstantOnOpen: CGFloat = 40
+	let startButtonTopConstantOnClose: CGFloat = 60
 	@IBOutlet private var startButtonTopConstraint: NSLayoutConstraint!
 
 	@IBOutlet private var startButton: UIButton!

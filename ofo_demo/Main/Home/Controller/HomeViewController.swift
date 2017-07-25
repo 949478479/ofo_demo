@@ -350,6 +350,9 @@ extension HomeViewController: AMapSearchDelegate {
 		removeBikeAnnotationsIfNeeded()
 		if response.count > 0 {
 			showBikeAnnotations(for: response.pois)
+			anchorAnnotationView?.showCallout = false
+		} else {
+			anchorAnnotationView?.showCallout = true
 		}
 	}
 
