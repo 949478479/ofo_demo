@@ -43,5 +43,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>ofo小黄车需要使用相机来扫描二维码开锁。</string>
 </dict>
 </plist>

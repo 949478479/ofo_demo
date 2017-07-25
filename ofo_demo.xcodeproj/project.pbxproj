@@ -98,6 +98,10 @@
 		3E75E6B01F17F06800259815 /* CLLocation+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75E6AF1F17F06800259815 /* CLLocation+LXExtension.swift */; };
 		3E75E6B21F17FB5200259815 /* AMap+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75E6B11F17FB5200259815 /* AMap+LXExtension.swift */; };
 		3EA4215A1F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA421591F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift */; };
+		3EAD9C971F274C110047A73A /* LXQRCodeScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD9C941F274BFB0047A73A /* LXQRCodeScanner.m */; };
+		3EAD9C981F274C130047A73A /* LXQRCodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD9C961F274BFB0047A73A /* LXQRCodeUtil.m */; };
+		3EC19BD71F21083300ED65A1 /* Unlocking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EC19BD61F21083300ED65A1 /* Unlocking.storyboard */; };
+		3EC19BE11F211CED00ED65A1 /* UnlockingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC19BE01F211CED00ED65A1 /* UnlockingViewController.swift */; };
 		3ECE67961F18266C0060399A /* BikeAnnotationCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */; };
 		3ED523411F1E0E5800142291 /* UserProfileBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED523401F1E0E5800142291 /* UserProfileBackgroundView.swift */; };
 		3ED523431F1E16BC00142291 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ED523421F1E161F00142291 /* Home.storyboard */; };
@@ -254,6 +258,12 @@
 		3E75E6AF1F17F06800259815 /* CLLocation+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+LXExtension.swift"; sourceTree = "<group>"; };
 		3E75E6B11F17FB5200259815 /* AMap+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AMap+LXExtension.swift"; sourceTree = "<group>"; };
 		3EA421591F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+LXExtension.swift"; sourceTree = "<group>"; };
+		3EAD9C931F274BFB0047A73A /* LXQRCodeScanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQRCodeScanner.h; sourceTree = "<group>"; };
+		3EAD9C941F274BFB0047A73A /* LXQRCodeScanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQRCodeScanner.m; sourceTree = "<group>"; };
+		3EAD9C951F274BFB0047A73A /* LXQRCodeUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQRCodeUtil.h; sourceTree = "<group>"; };
+		3EAD9C961F274BFB0047A73A /* LXQRCodeUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQRCodeUtil.m; sourceTree = "<group>"; };
+		3EC19BD61F21083300ED65A1 /* Unlocking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Unlocking.storyboard; sourceTree = "<group>"; };
+		3EC19BE01F211CED00ED65A1 /* UnlockingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockingViewController.swift; sourceTree = "<group>"; };
 		3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeAnnotationCalloutView.xib; sourceTree = "<group>"; };
 		3ED523401F1E0E5800142291 /* UserProfileBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileBackgroundView.swift; sourceTree = "<group>"; };
 		3ED523421F1E161F00142291 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -293,8 +303,9 @@
 				3E205AB21EF2F30E0021A966 /* Common */,
 				3E20592A1EF2E9ED0021A966 /* Other */,
 				3E2059271EF2E9ED0021A966 /* Login */,
-				3E2059201EF2E9ED0021A966 /* Gift */,
 				3E2059231EF2E9ED0021A966 /* Home */,
+				3EC19BD41F2107FA00ED65A1 /* Unlocking */,
+				3E2059201EF2E9ED0021A966 /* Gift */,
 				3E230A801EF9728C003CB963 /* User */,
 			);
 			path = Main;
@@ -342,6 +353,7 @@
 		3E2059F41EF2EDEE0021A966 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				3EC19BD81F211C1900ED65A1 /* Vender */,
 				3E2059F51EF2EDEE0021A966 /* Category */,
 			);
 			path = Expand;
@@ -659,6 +671,42 @@
 			path = Swift;
 			sourceTree = "<group>";
 		};
+		3EAD9C921F274BFB0047A73A /* LXQRCodeUtil */ = {
+			isa = PBXGroup;
+			children = (
+				3EAD9C931F274BFB0047A73A /* LXQRCodeScanner.h */,
+				3EAD9C941F274BFB0047A73A /* LXQRCodeScanner.m */,
+				3EAD9C951F274BFB0047A73A /* LXQRCodeUtil.h */,
+				3EAD9C961F274BFB0047A73A /* LXQRCodeUtil.m */,
+			);
+			path = LXQRCodeUtil;
+			sourceTree = "<group>";
+		};
+		3EC19BD41F2107FA00ED65A1 /* Unlocking */ = {
+			isa = PBXGroup;
+			children = (
+				3EC19BD61F21083300ED65A1 /* Unlocking.storyboard */,
+				3EC19BD51F21081B00ED65A1 /* Controller */,
+			);
+			path = Unlocking;
+			sourceTree = "<group>";
+		};
+		3EC19BD51F21081B00ED65A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3EC19BE01F211CED00ED65A1 /* UnlockingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3EC19BD81F211C1900ED65A1 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				3EAD9C921F274BFB0047A73A /* LXQRCodeUtil */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
 		3EEC9FBB1EF15DC000B0FC80 = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +823,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E2059331EF2E9ED0021A966 /* Login.storyboard in Resources */,
+				3EC19BD71F21083300ED65A1 /* Unlocking.storyboard in Resources */,
 				3E205A8D1EF2EE170021A966 /* MBProgressHUD+LXExtension.xcassets in Resources */,
 				3E4C51D41F0BD19E0037378B /* 中国北京市海淀区紫金大厦.gpx in Resources */,
 				3ED523431F1E16BC00142291 /* Home.storyboard in Resources */,
@@ -849,6 +898,7 @@
 				3E205A7A1EF2EE170021A966 /* LXTimer.m in Sources */,
 				3E2670531EFBD01200FB76A0 /* DummyNavigationBarViewController.swift in Sources */,
 				3E205AAD1EF2EE170021A966 /* WKWebView+LXExtension.m in Sources */,
+				3EAD9C971F274C110047A73A /* LXQRCodeScanner.m in Sources */,
 				3E75E6AE1F17D38700259815 /* NavigationRoute.swift in Sources */,
 				3E205A7F1EF2EE170021A966 /* NSAttributedString+LXExtension.m in Sources */,
 				3E205AAE1EF2EE170021A966 /* LXUtilities.m in Sources */,
@@ -881,6 +931,7 @@
 				3E205A9B1EF2EE170021A966 /* UICollectionView+LXExtension.m in Sources */,
 				3E205A991EF2EE170021A966 /* UIBezierPath+LXExtension.m in Sources */,
 				3E205A801EF2EE170021A966 /* NSBundle+LXExtension.m in Sources */,
+				3EAD9C981F274C130047A73A /* LXQRCodeUtil.m in Sources */,
 				3E205A9F1EF2EE170021A966 /* UIImage+ImageEffects.m in Sources */,
 				3E205A7E1EF2EE170021A966 /* NSArray+LXExtension.m in Sources */,
 				3E205A831EF2EE170021A966 /* NSDictionary+LXExtension.m in Sources */,
@@ -918,6 +969,7 @@
 				3E205AAA1EF2EE170021A966 /* UIViewController+LXExtension.m in Sources */,
 				3E205A8E1EF2EE170021A966 /* CALayer+LXExtension.m in Sources */,
 				3E205AA91EF2EE170021A966 /* UIView+LXExtension.m in Sources */,
+				3EC19BE11F211CED00ED65A1 /* UnlockingViewController.swift in Sources */,
 				3E205A9E1EF2EE170021A966 /* UIDevice+LXExtension.m in Sources */,
 				3E230A931EF9B251003CB963 /* UserCenterViewController.swift in Sources */,
 				3E39DBDA1F1D0B08008DFB2B /* AnchorAnnotation.swift in Sources */,

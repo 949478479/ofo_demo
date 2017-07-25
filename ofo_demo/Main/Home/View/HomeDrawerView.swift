@@ -10,17 +10,22 @@ import UIKit
 
 class HomeDrawerView: UIView {
 
-	@IBInspectable var arcHight: CGFloat = 0
-    @IBInspectable var heightOnClose: CGFloat = 0
-    @IBOutlet private var topConstraint: NSLayoutConstraint! {
-        didSet {
-            topConstraint.constant = heightOnClose
-        }
-    }
+	var arcHight: CGFloat = 40
+    var heightOnClose: CGFloat = 68
+	@IBOutlet private var topConstraint: NSLayoutConstraint! {
+		didSet {
+			topConstraint.constant = heightOnClose
+		}
+	}
 
-    @IBOutlet var handleButton: UIButton!
-    @IBOutlet var userCenterButton: UIButton!
-    @IBOutlet var giftCenterButton: UIButton!
+	var startButtonTopConstantOnOpen: CGFloat = 40
+	var startButtonTopConstantOnClose: CGFloat = 60
+	@IBOutlet private var startButtonTopConstraint: NSLayoutConstraint!
+
+	@IBOutlet private var startButton: UIButton!
+    @IBOutlet private var handleButton: UIButton!
+    @IBOutlet private var userCenterButton: UIButton!
+    @IBOutlet private var giftCenterButton: UIButton!
 
     private(set) var isOpen = false
 }
@@ -67,14 +72,14 @@ extension HomeDrawerView {
     @IBAction private func switchDrawerState() {
         if isOpen {
             isOpen = false
-            handleButton.isSelected = false
             handleButton.lx_normalImage = #imageLiteral(resourceName: "arrowup")
             topConstraint.constant = heightOnClose
+			startButtonTopConstraint.constant = startButtonTopConstantOnClose
         } else {
             isOpen = true
-            handleButton.isSelected = true
             handleButton.lx_normalImage = #imageLiteral(resourceName: "arrowdown")
             topConstraint.constant = lx_height
+			startButtonTopConstraint.constant = startButtonTopConstantOnOpen
         }
 
         UIView.animate(withDuration: 0.25) {

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I8o-1j-zCW">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Unlocking View Controller-->
+        <scene sceneID="cnh-af-nQg">
+            <objects>
+                <viewController id="I8o-1j-zCW" customClass="UnlockingViewController" customModule="ofo_demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="FJu-oN-igC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZsZ-28-zwa" customClass="LXCaptureVideoPreviewView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maskAlpha">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellowBikeWhiteTitle" translatesAutoresizingMaskIntoConstraints="NO" id="cz6-TD-8ZH">
+                                <rect key="frame" x="20" y="35" width="128" height="27"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_QRCodeStorke" translatesAutoresizingMaskIntoConstraints="NO" id="0fm-Dl-pYq">
+                                <rect key="frame" x="32" y="144" width="257" height="257"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_QRCodeLine" translatesAutoresizingMaskIntoConstraints="NO" id="uLW-kx-swo">
+                                <rect key="frame" x="38" y="271" width="244" height="3"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLg-7Q-qZ6">
+                                <rect key="frame" x="270" y="35" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ERH-Iq-fUG"/>
+                                    <constraint firstAttribute="width" constant="30" id="X2q-4x-oE4"/>
+                                </constraints>
+                                <state key="normal" image="whiteClose"/>
+                                <connections>
+                                    <segue destination="fDx-XS-3El" kind="unwind" unwindAction="unwindFor:" id="rTf-6P-E9Q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对准车牌上的二维码，即可自动扫描" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnw-P4-5gb">
+                                <rect key="frame" x="21.5" y="103.5" width="277.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="omw-hw-yVs">
+                                <rect key="frame" x="214.5" y="494" width="66.5" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91u-j0-Xn0">
+                                        <rect key="frame" x="13.5" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.36862745098039218" green="0.36078431372549019" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Pg5-Oe-dGF"/>
+                                            <constraint firstAttribute="width" constant="40" id="TYH-NS-qzW"/>
+                                        </constraints>
+                                        <state key="normal" image="btn_unenableTorch"/>
+                                        <state key="selected" image="btn_enableTorch"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="torchButtonDidTap:" destination="I8o-1j-zCW" eventType="touchUpInside" id="Ljt-eO-pj6"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="打开手电筒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sab-jg-otv">
+                                        <rect key="frame" x="0.0" y="50" width="66.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="miD-F1-pP5">
+                                <rect key="frame" x="40" y="494" width="80" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNg-dU-rbN">
+                                        <rect key="frame" x="20" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.36862745099999999" green="0.36078431370000003" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="RET-mY-kRd"/>
+                                            <constraint firstAttribute="width" constant="40" id="RuL-2z-zKU"/>
+                                        </constraints>
+                                        <state key="normal" image="inputBlikeNo"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手动输入车牌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwA-D7-8Zo">
+                                        <rect key="frame" x="0.0" y="50" width="80" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="rV3-yv-OkY"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="omw-hw-yVs" secondAttribute="bottom" constant="8" id="184-Ms-Z12"/>
+                            <constraint firstItem="uLW-kx-swo" firstAttribute="centerY" secondItem="0fm-Dl-pYq" secondAttribute="centerY" id="1iM-Iy-j5g"/>
+                            <constraint firstAttribute="trailing" secondItem="mLg-7Q-qZ6" secondAttribute="trailing" constant="20" id="6XM-6u-Inj"/>
+                            <constraint firstItem="cz6-TD-8ZH" firstAttribute="leading" secondItem="FJu-oN-igC" secondAttribute="leading" constant="20" id="CPL-CA-5PX"/>
+                            <constraint firstItem="0fm-Dl-pYq" firstAttribute="centerX" secondItem="FJu-oN-igC" secondAttribute="centerX" id="LCg-Fw-OW8"/>
+                            <constraint firstItem="ZsZ-28-zwa" firstAttribute="leading" secondItem="FJu-oN-igC" secondAttribute="leading" id="MDp-aG-gy4"/>
+                            <constraint firstItem="bnw-P4-5gb" firstAttribute="centerX" secondItem="FJu-oN-igC" secondAttribute="centerX" id="OMM-3F-W9z"/>
+                            <constraint firstItem="0fm-Dl-pYq" firstAttribute="top" secondItem="FJu-oN-igC" secondAttribute="top" constant="144" id="TcP-xg-7Hi"/>
+                            <constraint firstItem="uLW-kx-swo" firstAttribute="centerX" secondItem="0fm-Dl-pYq" secondAttribute="centerX" id="ViU-go-Hug"/>
+                            <constraint firstAttribute="bottom" secondItem="ZsZ-28-zwa" secondAttribute="bottom" id="YOg-TP-L6a"/>
+                            <constraint firstItem="cz6-TD-8ZH" firstAttribute="top" secondItem="FJu-oN-igC" secondAttribute="top" constant="35" id="bcj-Mw-jWg"/>
+                            <constraint firstAttribute="trailing" secondItem="ZsZ-28-zwa" secondAttribute="trailing" id="cX2-GQ-r76"/>
+                            <constraint firstItem="0fm-Dl-pYq" firstAttribute="trailing" secondItem="omw-hw-yVs" secondAttribute="trailing" constant="8" id="cbD-nW-2o0"/>
+                            <constraint firstItem="miD-F1-pP5" firstAttribute="leading" secondItem="0fm-Dl-pYq" secondAttribute="leading" constant="8" id="f1v-VI-AGk"/>
+                            <constraint firstItem="0fm-Dl-pYq" firstAttribute="top" secondItem="bnw-P4-5gb" secondAttribute="bottom" constant="20" id="frd-Dv-iwI"/>
+                            <constraint firstItem="mLg-7Q-qZ6" firstAttribute="top" secondItem="FJu-oN-igC" secondAttribute="top" constant="35" id="sOj-DA-qOk"/>
+                            <constraint firstItem="ZsZ-28-zwa" firstAttribute="top" secondItem="FJu-oN-igC" secondAttribute="top" id="uRI-YS-XDK"/>
+                            <constraint firstAttribute="bottom" secondItem="miD-F1-pP5" secondAttribute="bottom" constant="8" id="umZ-tu-LGs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qx0-AD-21r"/>
+                    </view>
+                    <connections>
+                        <outlet property="scanner" destination="WHW-dB-9bI" id="KhK-82-UCw"/>
+                        <outlet property="scanningLine" destination="uLW-kx-swo" id="wQg-JB-POl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3q-Qi-AqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fDx-XS-3El" userLabel="Exit" sceneMemberID="exit"/>
+                <customObject id="WHW-dB-9bI" customClass="LXQRCodeScanner">
+                    <connections>
+                        <outlet property="previewView" destination="ZsZ-28-zwa" id="BDb-zQ-Cap"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-225" y="39"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_QRCodeLine" width="244" height="3"/>
+        <image name="bg_QRCodeStorke" width="257" height="257"/>
+        <image name="btn_enableTorch" width="21" height="21"/>
+        <image name="btn_unenableTorch" width="15" height="23"/>
+        <image name="inputBlikeNo" width="15" height="23"/>
+        <image name="whiteClose" width="15" height="15"/>
+        <image name="yellowBikeWhiteTitle" width="128" height="27"/>
+    </resources>
+</document>

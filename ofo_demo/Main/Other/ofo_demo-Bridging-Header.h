@@ -13,5 +13,6 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <MAMapKit/MAMapKit.h>
 #import "LXUtilities.h"
+#import "LXQRCodeScanner.h"
 
 #endif /* ofo_demo_Bridging_Header_h */

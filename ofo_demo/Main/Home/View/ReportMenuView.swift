@@ -72,7 +72,11 @@ extension ReportMenuView {
 		}
 	}
 
-	@IBAction func dismiss(animated: Bool = true) {
+	@IBAction private func dismiss(_ sender: UIButton) {
+		dismiss()
+	}
+	
+	func dismiss(animated: Bool = true) {
 		if animated {
 			UIView.animate(withDuration: animationDuration, animations: {
 				self.alpha = 0
