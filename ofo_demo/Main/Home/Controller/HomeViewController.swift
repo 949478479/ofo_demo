@@ -258,7 +258,21 @@ extension HomeViewController: MAMapViewDelegate {
 
 	// MARK: 定位
 	func mapView(_ mapView: MAMapView!, didFailToLocateUserWithError error: Error!) {
-		printLog("\(error)")
+		if let error = error as? CLError {
+			switch error.code {
+			case .denied:
+				if CLLocationManager.authorizationStatus() == .denied {
+					showLocationServiceWasDeniedAlert()
+				}
+			case .network:
+				showNetworkErrorOccurredAlert()
+			case .locationUnknown:
+				showLocationUnknownAlert()
+			default:
+				break
+			}
+		}
+		printLog("\(error as! CLError)")
 	}
 
 	func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
@@ -341,7 +355,15 @@ extension HomeViewController: AMapSearchDelegate {
 				endRoutePlanMode(forMapCenter: routeStartCoordinate)
 			}
 		}
+
 		printLog("\(error)")
+
+		switch (error as NSError).code {
+		case 1806:
+			MBProgressHUD.lx.showStatus("加载附近车辆位置失败，网络异常")
+		default:
+			break
+		}
 	}
 
 	// MARK: 兴趣点
@@ -375,5 +397,30 @@ extension HomeViewController: ReportMenuViewDelegate {
 		let webViewController = WebViewController()
 		webViewController.title = reportType.title
 		show(webViewController, sender: self)
+	}
+}
+
+// MARK: - 弹窗
+extension HomeViewController {
+
+	func showAlert(withTitle title: String? = nil, message: String? = nil, url: String = UIApplicationOpenSettingsURLString) {
+		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+		alert.addAction(UIAlertAction(title: "设置", style: .default, handler: { (_) in
+			UIApplication.shared.openURL(URL(string: url)!)
+		}))
+		present(alert, animated: true, completion: nil)
+	}
+
+	func showLocationServiceWasDeniedAlert() {
+		showAlert(withTitle: "请允许“ofo共享单车”使用您的位置")
+	}
+
+	func showNetworkErrorOccurredAlert() {
+		showAlert(withTitle: "网络连接出了问题", message: "请检查您的网络连接\n或者进入“设置”中允许“ofo共享单车”访问网络数据")
+	}
+
+	func showLocationUnknownAlert() {
+		showAlert(message: "打开无线局域网将提高定位准确性", url: "App-Prefs:root=WIFI")
 	}
 }

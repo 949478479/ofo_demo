@@ -32,6 +32,15 @@ extension Swifty where Base: MBProgressHUD {
 		return showActivityIndicator(withStatus: "路径规划中...")
 	}
 
+	@discardableResult
+	static func showStatus(_ status: String, to view: UIView = UIWindow.lx.key) -> MBProgressHUD {
+		let hud = MBProgressHUD.showAdded(to: view, animated: true)
+		hud.mode = .text
+		hud.detailsLabel.text = status
+		hud.hide(animated: true, afterDelay: 1)
+		return hud
+	}
+
 	static func hide(animated: Bool = true) {
 		MBProgressHUD.hide(for: UIWindow.lx.key, animated: animated)
 	}
