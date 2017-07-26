@@ -50,9 +50,14 @@ extension BikeAnnotationView {
 	override func setSelected(_ selected: Bool, animated: Bool) {
 		super.setSelected(selected, animated: animated)
 		// 点击地图时会取消标记的选中状态，因此关闭此属性，这样再次点击标记才能正常显示 callout
-		if !selected {
+		if selected {
+		} else {
 			canShowCallout = false
 		}
+
+		UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [], animations: {
+			self.transform = selected ? CGAffineTransform(scaleX: 1.3, y: 1.3) : .identity
+		}, completion: nil)
 	}
 }
 
