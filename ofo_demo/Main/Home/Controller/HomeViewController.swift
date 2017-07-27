@@ -199,6 +199,7 @@ private extension HomeViewController {
 
 	func performPOIAroundSearch() {
 		searchStartCoordinate = mapView.centerCoordinate
+		anchorAnnotationView?.startBreathingAnimation()
 		mapSearchor.performPOIAroundSearch(for: searchStartCoordinate)
 	}
 
@@ -347,6 +348,7 @@ extension HomeViewController: AMapSearchDelegate {
 
 	func aMapSearchRequest(_ request: Any!, didFailWithError error: Error!) {
 		if request is AMapPOISearchBaseRequest {
+			anchorAnnotationView?.stopBreathingAnimation()
 			locationButton.stopRefreshAnimation()
 			removeBikeAnnotationsIfNeeded()
 		} else if request is AMapRouteSearchBaseRequest {
@@ -368,6 +370,7 @@ extension HomeViewController: AMapSearchDelegate {
 
 	// MARK: 兴趣点
 	func onPOISearchDone(_ request: AMapPOISearchBaseRequest!, response: AMapPOISearchResponse!) {
+		anchorAnnotationView?.stopBreathingAnimation()
 		locationButton.stopRefreshAnimation()
 		removeBikeAnnotationsIfNeeded()
 		if response.count > 0 {

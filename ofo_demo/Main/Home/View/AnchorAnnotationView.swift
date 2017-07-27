@@ -69,9 +69,33 @@ class AnchorAnnotationView: MAAnnotationView {
 			isSelected = showCallout
 		}
 	}
+	private let dotLayer: CALayer
+	private var isStopBreathing = false
+
+	override init!(annotation: MAAnnotation!, reuseIdentifier: String!) {
+		dotLayer = CALayer()
+		dotLayer.cornerRadius = 3
+		dotLayer.position = CGPoint(x: 12, y: 12)
+		dotLayer.bounds = CGRect(x: 0, y: 0, width: 6, height: 6)
+		dotLayer.backgroundColor = UIColor(hex: 0xffd900).cgColor
+
+		super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+
+		layer.addSublayer(dotLayer)
+
+		image = #imageLiteral(resourceName: "homePage_wholeAnchor")
+		centerOffset.y = -image.size.height / 2 + 2 // 微调 2 点效果更好
+		isEnabled = false
+		canShowCallout = true
+		customCalloutView = MACustomCalloutView(customView: AnchorAnnotationCalloutView())
+	}
+
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 }
 
-// MARK: - 工厂方法
+// MARK: - 构造方法
 extension AnchorAnnotationView {
 
 	class func annotationView(with mapView: MAMapView, for annotation: AnchorAnnotation) -> AnchorAnnotationView {
@@ -81,11 +105,6 @@ extension AnchorAnnotationView {
 			annotationView = _annotationView
 		} else {
 			annotationView = AnchorAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-			annotationView.image = #imageLiteral(resourceName: "homePage_wholeAnchor")
-			annotationView.centerOffset.y = -annotationView.image.size.height / 2 + 2 // 微调 2 点效果更好
-			annotationView.isEnabled = false
-			annotationView.canShowCallout = true
-			annotationView.customCalloutView = MACustomCalloutView(customView: AnchorAnnotationCalloutView())
 		}
 		return annotationView
 	}
@@ -95,11 +114,33 @@ extension AnchorAnnotationView {
 extension AnchorAnnotationView {
 
 	func performBounceAnimation() {
+		guard layer.animation(forKey: "bounce") == nil else { return }
 		let bounceAnimation = CAKeyframeAnimation(keyPath: "position.y")
 		bounceAnimation.duration = 0.25
 		bounceAnimation.isAdditive = true
 		bounceAnimation.values = [0, -20, 0]
 		bounceAnimation.timingFunctions = [.easeOut, .easeIn]
-		layer.add(bounceAnimation, forKey: nil)
+		layer.add(bounceAnimation, forKey: "bounce")
+	}
+
+	func startBreathingAnimation() {
+		guard dotLayer.animation(forKey: "breathing") == nil else { return }
+		let breathingAnimation = CABasicAnimation(keyPath: "transform")
+		breathingAnimation.duration = 1.5
+		breathingAnimation.autoreverses = true
+		breathingAnimation.repeatCount = .infinity
+		breathingAnimation.timingFunction = .linear
+		breathingAnimation.toValue = CATransform3DMakeScale(2.5, 2.5, 1)
+		dotLayer.add(breathingAnimation, forKey: "breathing")
+	}
+
+	func stopBreathingAnimation() {
+		guard dotLayer.animation(forKey: "breathing") != nil else { return }
+		let animation = CABasicAnimation(keyPath: "transform")
+		animation.fromValue = dotLayer.presentation()?.transform
+		animation.timingFunction = .linear
+		animation.duration = 0.25
+		dotLayer.add(animation, forKey: nil)
+		dotLayer.removeAnimation(forKey: "breathing")
 	}
 }
