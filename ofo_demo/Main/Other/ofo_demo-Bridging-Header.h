@@ -14,5 +14,6 @@
 #import <MAMapKit/MAMapKit.h>
 #import "LXUtilities.h"
 #import "LXQRCodeScanner.h"
+#import "LXKeyboardSpacingView.h"
 
 #endif /* ofo_demo_Bridging_Header_h */

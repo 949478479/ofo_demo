@@ -97,9 +97,17 @@
 		3E75E6AE1F17D38700259815 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75E6AD1F17D38700259815 /* NavigationRoute.swift */; };
 		3E75E6B01F17F06800259815 /* CLLocation+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75E6AF1F17F06800259815 /* CLLocation+LXExtension.swift */; };
 		3E75E6B21F17FB5200259815 /* AMap+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75E6B11F17FB5200259815 /* AMap+LXExtension.swift */; };
+		3EA1D2621F320DAD004C3E34 /* NumberKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1D2611F320DAD004C3E34 /* NumberKeyboardView.swift */; };
+		3EA1D2651F33653B004C3E34 /* LXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1D2631F33653A004C3E34 /* LXAlertView.m */; };
+		3EA1D2671F3367DA004C3E34 /* BikeNoInvalidAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1D2661F3367DA004C3E34 /* BikeNoInvalidAlertView.swift */; };
+		3EA1D2691F336809004C3E34 /* BikeNoInvalidAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EA1D2681F336809004C3E34 /* BikeNoInvalidAlertView.xib */; };
 		3EA4215A1F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA421591F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift */; };
 		3EAD9C971F274C110047A73A /* LXQRCodeScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD9C941F274BFB0047A73A /* LXQRCodeScanner.m */; };
 		3EAD9C981F274C130047A73A /* LXQRCodeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD9C961F274BFB0047A73A /* LXQRCodeUtil.m */; };
+		3EBA69E81F30641B0062BC45 /* UnlockingSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA69E71F30641B0062BC45 /* UnlockingSegue.swift */; };
+		3EBA69EB1F3064B40062BC45 /* PresentUnlockingUIAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA69EA1F3064B40062BC45 /* PresentUnlockingUIAnimator.swift */; };
+		3EBA69ED1F3068F40062BC45 /* DismissUnlockingUIAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA69EC1F3068F40062BC45 /* DismissUnlockingUIAnimator.swift */; };
+		3EBA69EF1F306FF10062BC45 /* InputBlikeNoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA69EE1F306FF00062BC45 /* InputBlikeNoContainerView.swift */; };
 		3EC19BD71F21083300ED65A1 /* Unlocking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EC19BD61F21083300ED65A1 /* Unlocking.storyboard */; };
 		3EC19BE11F211CED00ED65A1 /* UnlockingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC19BE01F211CED00ED65A1 /* UnlockingViewController.swift */; };
 		3ECE67961F18266C0060399A /* BikeAnnotationCalloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */; };
@@ -257,11 +265,20 @@
 		3E75E6AD1F17D38700259815 /* NavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
 		3E75E6AF1F17F06800259815 /* CLLocation+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+LXExtension.swift"; sourceTree = "<group>"; };
 		3E75E6B11F17FB5200259815 /* AMap+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AMap+LXExtension.swift"; sourceTree = "<group>"; };
+		3EA1D2611F320DAD004C3E34 /* NumberKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberKeyboardView.swift; sourceTree = "<group>"; };
+		3EA1D2631F33653A004C3E34 /* LXAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXAlertView.m; sourceTree = "<group>"; };
+		3EA1D2641F33653A004C3E34 /* LXAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXAlertView.h; sourceTree = "<group>"; };
+		3EA1D2661F3367DA004C3E34 /* BikeNoInvalidAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeNoInvalidAlertView.swift; sourceTree = "<group>"; };
+		3EA1D2681F336809004C3E34 /* BikeNoInvalidAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeNoInvalidAlertView.xib; sourceTree = "<group>"; };
 		3EA421591F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+LXExtension.swift"; sourceTree = "<group>"; };
 		3EAD9C931F274BFB0047A73A /* LXQRCodeScanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQRCodeScanner.h; sourceTree = "<group>"; };
 		3EAD9C941F274BFB0047A73A /* LXQRCodeScanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQRCodeScanner.m; sourceTree = "<group>"; };
 		3EAD9C951F274BFB0047A73A /* LXQRCodeUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQRCodeUtil.h; sourceTree = "<group>"; };
 		3EAD9C961F274BFB0047A73A /* LXQRCodeUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQRCodeUtil.m; sourceTree = "<group>"; };
+		3EBA69E71F30641B0062BC45 /* UnlockingSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockingSegue.swift; sourceTree = "<group>"; };
+		3EBA69EA1F3064B40062BC45 /* PresentUnlockingUIAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentUnlockingUIAnimator.swift; sourceTree = "<group>"; };
+		3EBA69EC1F3068F40062BC45 /* DismissUnlockingUIAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissUnlockingUIAnimator.swift; sourceTree = "<group>"; };
+		3EBA69EE1F306FF00062BC45 /* InputBlikeNoContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBlikeNoContainerView.swift; sourceTree = "<group>"; };
 		3EC19BD61F21083300ED65A1 /* Unlocking.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Unlocking.storyboard; sourceTree = "<group>"; };
 		3EC19BE01F211CED00ED65A1 /* UnlockingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockingViewController.swift; sourceTree = "<group>"; };
 		3ECE67951F18266C0060399A /* BikeAnnotationCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BikeAnnotationCalloutView.xib; sourceTree = "<group>"; };
@@ -404,6 +421,8 @@
 				3E205A071EF2EE170021A966 /* LXTimer.m */,
 				3E205A081EF2EE170021A966 /* LXWeakWrapper.h */,
 				3E205A091EF2EE170021A966 /* LXWeakWrapper.m */,
+				3EA1D2641F33653A004C3E34 /* LXAlertView.h */,
+				3EA1D2631F33653A004C3E34 /* LXAlertView.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -682,10 +701,33 @@
 			path = LXQRCodeUtil;
 			sourceTree = "<group>";
 		};
+		3EBA69E61F3063D70062BC45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3EBA69E71F30641B0062BC45 /* UnlockingSegue.swift */,
+				3EA1D2611F320DAD004C3E34 /* NumberKeyboardView.swift */,
+				3EA1D2661F3367DA004C3E34 /* BikeNoInvalidAlertView.swift */,
+				3EA1D2681F336809004C3E34 /* BikeNoInvalidAlertView.xib */,
+				3EBA69EE1F306FF00062BC45 /* InputBlikeNoContainerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3EBA69E91F30643E0062BC45 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				3EBA69EA1F3064B40062BC45 /* PresentUnlockingUIAnimator.swift */,
+				3EBA69EC1F3068F40062BC45 /* DismissUnlockingUIAnimator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
 		3EC19BD41F2107FA00ED65A1 /* Unlocking */ = {
 			isa = PBXGroup;
 			children = (
 				3EC19BD61F21083300ED65A1 /* Unlocking.storyboard */,
+				3EBA69E91F30643E0062BC45 /* Animator */,
+				3EBA69E61F3063D70062BC45 /* View */,
 				3EC19BD51F21081B00ED65A1 /* Controller */,
 			);
 			path = Unlocking;
@@ -822,6 +864,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA1D2691F336809004C3E34 /* BikeNoInvalidAlertView.xib in Resources */,
 				3E2059331EF2E9ED0021A966 /* Login.storyboard in Resources */,
 				3EC19BD71F21083300ED65A1 /* Unlocking.storyboard in Resources */,
 				3E205A8D1EF2EE170021A966 /* MBProgressHUD+LXExtension.xcassets in Resources */,
@@ -896,6 +939,7 @@
 				3E205A961EF2EE170021A966 /* CGGeometry+LXExtension.swift in Sources */,
 				3E2059341EF2E9ED0021A966 /* LoginVideoViewController.swift in Sources */,
 				3E205A7A1EF2EE170021A966 /* LXTimer.m in Sources */,
+				3EBA69ED1F3068F40062BC45 /* DismissUnlockingUIAnimator.swift in Sources */,
 				3E2670531EFBD01200FB76A0 /* DummyNavigationBarViewController.swift in Sources */,
 				3E205AAD1EF2EE170021A966 /* WKWebView+LXExtension.m in Sources */,
 				3EAD9C971F274C110047A73A /* LXQRCodeScanner.m in Sources */,
@@ -926,9 +970,11 @@
 				3E14EF3A1F1DECA2003BB88B /* BikeAnnotationCollection.swift in Sources */,
 				3E75E6B01F17F06800259815 /* CLLocation+LXExtension.swift in Sources */,
 				3E230A851EF97E34003CB963 /* UserCenterContainerViewController.swift in Sources */,
+				3EA1D2651F33653B004C3E34 /* LXAlertView.m in Sources */,
 				3E20592F1EF2E9ED0021A966 /* GiftViewController.swift in Sources */,
 				3E205A9D1EF2EE170021A966 /* UIColor+LXExtension.m in Sources */,
 				3E205A9B1EF2EE170021A966 /* UICollectionView+LXExtension.m in Sources */,
+				3EBA69EF1F306FF10062BC45 /* InputBlikeNoContainerView.swift in Sources */,
 				3E205A991EF2EE170021A966 /* UIBezierPath+LXExtension.m in Sources */,
 				3E205A801EF2EE170021A966 /* NSBundle+LXExtension.m in Sources */,
 				3EAD9C981F274C130047A73A /* LXQRCodeUtil.m in Sources */,
@@ -936,6 +982,7 @@
 				3E205A7E1EF2EE170021A966 /* NSArray+LXExtension.m in Sources */,
 				3E205A831EF2EE170021A966 /* NSDictionary+LXExtension.m in Sources */,
 				3E205A971EF2EE170021A966 /* UIView+LXExtension.swift in Sources */,
+				3EBA69E81F30641B0062BC45 /* UnlockingSegue.swift in Sources */,
 				3E205A941EF2EE170021A966 /* CATransform3D+LXExtension.swift in Sources */,
 				3E39DBDC1F1D1078008DFB2B /* AnchorAnnotationView.swift in Sources */,
 				3E2059351EF2E9ED0021A966 /* AppDelegate.swift in Sources */,
@@ -963,6 +1010,7 @@
 				3E205A751EF2EE170021A966 /* LXImagePicker.m in Sources */,
 				3EA4215A1F1CC8FC007F01A8 /* NSAttributedString+LXExtension.swift in Sources */,
 				3E205A8B1EF2EE170021A966 /* LXRingAnimatedView.m in Sources */,
+				3EBA69EB1F3064B40062BC45 /* PresentUnlockingUIAnimator.swift in Sources */,
 				3E205AA81EF2EE170021A966 /* UITextView+LXExtension.m in Sources */,
 				3E2670521EFBD01000FB76A0 /* WebViewController.swift in Sources */,
 				3E205AAC1EF2EE170021A966 /* UIWindow+LXExtension.m in Sources */,
@@ -980,6 +1028,8 @@
 				3E205A891EF2EE170021A966 /* NSTimer+LXExtension.m in Sources */,
 				3E205AA31EF2EE170021A966 /* UIScrollView+LXExtension.m in Sources */,
 				3E205A7B1EF2EE170021A966 /* LXWeakWrapper.m in Sources */,
+				3EA1D2671F3367DA004C3E34 /* BikeNoInvalidAlertView.swift in Sources */,
+				3EA1D2621F320DAD004C3E34 /* NumberKeyboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

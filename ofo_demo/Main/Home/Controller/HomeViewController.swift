@@ -12,6 +12,7 @@ import MBProgressHUD
 class HomeViewController: UIViewController {
 
 	@IBOutlet private var reportMenu: ReportMenuView!
+	@IBOutlet private(set) var drawerView: HomeDrawerView!
 	@IBOutlet private var locationButton: HomeLocationButton!
 
 	private let mapView = MAMapView()
