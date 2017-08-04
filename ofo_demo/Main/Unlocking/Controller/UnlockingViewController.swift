@@ -235,19 +235,8 @@ extension UnlockingViewController: UITextFieldDelegate {
 // MARK: - NumberKeyboardViewDelegate
 extension UnlockingViewController: NumberKeyboardViewDelegate {
 
-	func keyboardView(_ keyboardView: NumberKeyboardView, didTapButtonForNumber number: String) {
-		if inputTextField.text!.count < 11 {
-			inputTextField.insertText(number)
-		}
-	}
-
 	func keyboardViewShouldEnableDoneButton(_ keyboardView: NumberKeyboardView) -> Bool {
 		return inputTextField.text!.count >= 4
-	}
-
-
-	func keyboardViewDidTapDeleteButton(_ keyboardView: NumberKeyboardView) {
-		inputTextField.deleteBackward()
 	}
 
 	func keyboardViewDidTapDoneButton(_ keyboardView: NumberKeyboardView) {
